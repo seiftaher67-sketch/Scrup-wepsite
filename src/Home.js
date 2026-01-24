@@ -1,151 +1,3 @@
-// import React from 'react';
-
-// function Home() {
-//     return (
-//         <div style={{ position: 'relative', width: '100%', overflow: 'auto' }}>
-//             <img
-//                 src="/image/Header.png"
-//                 alt="Header"
-//                 style={{
-//                     width: 'calc(100vw - 32px)',
-//                     height: '879px',
-//                     position: 'absolute',
-//                     top: '16px',
-//                     left: '16px',
-//                     transform: 'scaleX(-1)',
-//                     opacity: 1,
-//                     borderRadius: '10px'
-//                 }}
-//             />
-//             <img
-//                 src="/image/cont1.png"
-//                 alt="Cont1"
-//                 style={{
-//                     width: '235px',
-//                     height: '282px',
-//                     position: 'absolute',
-//                     top: '500px',
-//                     left: '165px',
-//                     transform: 'rotate(0deg)',
-//                     opacity: 1,
-//                     borderRadius: '20px'
-//                 }}
-//             />
-//             <div
-//                 style={{
-//                     position: 'absolute',
-//                     top: '500px',
-//                     left: '165px',
-//                     width: '235px',
-//                     height: '282px',
-//                     display: 'flex',
-//                     flexDirection: 'column',
-//                     alignItems: 'center',
-//                     justifyContent: 'center',
-//                     borderRadius: '20px'
-//                 }}
-//             >
-//                 <div
-//                     style={{
-//                         fontFamily: 'El Messiri',
-//                         fontWeight: 500,
-//                         fontStyle: 'Medium',
-//                         fontSize: '20px',
-//                         leadingTrim: 'NONE',
-//                         lineHeight: '150%',
-//                         letterSpacing: '0%',
-//                         textAlign: 'center',
-//                         color: 'white',
-//                         dir: 'rtl',
-//                         marginBottom: '10px'
-//                     }}
-//                 >
-//                     خصم خاص على جميع الإسكرابات لا تفوّتوا الفرصة
-//                 </div>
-//                 <div
-//                     style={{
-//                         fontFamily: 'El Messiri',
-//                         fontWeight: 700,
-//                         fontStyle: 'Bold',
-//                         fontSize: '64px',
-//                         leadingTrim: 'NONE',
-//                         lineHeight: '150%',
-//                         letterSpacing: '0%',
-//                         textAlign: 'center',
-//                         color: 'white'
-//                     }}
-//                 >
-//                     30%
-//                 </div>
-//             </div>
-//             <img
-//                 src="/image/logo.png"
-//                 alt="Logo"
-//                 style={{
-//                     width: '100px',
-//                     height: 'auto',
-//                     position: 'absolute',
-//                     top: '53px',
-//                     right: '16px',
-//                     borderRadius: '10px',
-//                     marginRight: '30px',
-//                     marginTop: '0px'
-//                 }}
-//             />
-//             <div style={{
-//                 position: 'absolute',
-//                 top: '53px',
-//                 left: '0px',
-//                 display: 'flex',
-//                 flexDirection: 'row',
-//                 gap: '30px',
-//                 alignItems: 'center'
-//             }}>
-//                 <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(251, 251, 251, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '90px' }}>
-//                     <img src="/image/icon1.png" alt="Icon 1" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
-//                 </div>
-//                 <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(251, 251, 251, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-//                     <img src="/image/icon2.png" alt="Icon 2" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
-//                 </div>
-//                 <div style={{ position: 'relative', width: '295px', height: '70px' }}>
-//                     <input type="text" placeholder="أبحث عن منتج" dir="rtl" style={{ width: '100%', height: '100%', borderRadius: '50px', backgroundColor: '#FBFBFB', opacity: 1, border: 'none', padding: '0 60px 0 20px', fontFamily: 'El Messiri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', outline: 'none', backgroundImage: 'url(/image/adca.png)', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 20px center', backgroundSize: '20px 20px' }} />
-//                 </div>
-//             </div>
-//             <div style={{
-//                 position: 'absolute',
-//                 top: '73px',
-//                 left: '900px',
-//                 display: 'flex',
-//                 flexDirection: 'row',
-//                 gap: '30px',
-//                 alignItems: 'center',
-//                 color: 'white',
-//                 fontFamily: 'El Messiri',
-//                 fontWeight: 400,
-//                 fontStyle: 'normal',
-//                 fontSize: '24px',
-//                 lineHeight: '150%',
-//                 letterSpacing: '0%',
-//                 wordSpacing: '20px'
-//             }}>
-//                 <span>أدوات طبية</span>
-//                 <span>نسائي </span>
-//                 <span>رجالي</span>
-//                 <span>الرئيسية </span>
-
-//             </div>
-//             <div style={{ position: 'absolute', top: '895px', right: '16px' }}>
-//                 <h2 style={{ fontFamily: 'El Messiri', fontWeight: 700, fontStyle: 'Bold', fontSize: '55px', leadingTrim: 'NONE', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', marginRight: '50px' }}> الأكثر مبيعًا</h2>
-//                 <p style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'Medium', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '150%', letterSpacing: '0%', marginRight: '50px' }}>اختيارات الأطباء والممارسين الصحيين</p>
-//             </div>
-
-//         </div>
-
-
-//     );
-// }
-
-// export default Home;
 
 
 
@@ -235,7 +87,7 @@ function Index() {
                     height: 'auto',
                     position: 'absolute',
                     top: '53px',
-                    right: '16px',
+                    right: '3px',
                     borderRadius: '10px',
                     marginRight: '30px',
                     marginTop: '0px'
@@ -263,7 +115,7 @@ function Index() {
             <div style={{
                 position: 'absolute',
                 top: '73px',
-                left: '900px',
+                left: '800px',
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '30px',

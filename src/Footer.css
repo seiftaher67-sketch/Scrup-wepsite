@@ -1,7 +1,7 @@
 .footer-container {
     position: absolute;
     width: 100%;
-    height: 570px;
+    height: 580px;
     top: 2561px;
     border-top: none;
     background: linear-gradient(to bottom, #333333, #1F7A8C);
@@ -21,9 +21,9 @@
     font-family: Cairo;
     font-weight: 400;
     font-style: Regular;
-    font-size: 20px;
+    font-size: 18px;
     leading-trim: none;
-    line-height: 28px;
+    line-height: 23px;
     letter-spacing: 0%;
     text-align: right;
 }
@@ -112,5 +112,32 @@
 
 .footer-images img {
     margin-right: 10px;
-    
+
+}
+
+#socal {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.copyright {
+    font-family: Cairo;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: right;
+    color: #FBFBFB;
+    margin-top: 10px;
+    margin-right: 60px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 60px;
 }
