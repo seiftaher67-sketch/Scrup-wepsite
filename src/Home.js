@@ -4,9 +4,29 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 
 function Index() {
+    const [isHovered, setIsHovered] = useState(false);
+
+    const buttonStyle = (isHovered) => ({
+        position: 'absolute',
+        top: '620px',
+        right: '65px',
+        width: '275px',
+        height: '76px',
+        background: isHovered ? '#2A9D8F' : '#1F7A8C',
+        color: 'white',
+        fontFamily: 'El Messiri',
+        fontWeight: 600,
+        fontSize: '34px',
+        borderRadius: '10px',
+        border: 'none',
+        cursor: 'pointer',
+        transition: 'background 0.3s ease, box-shadow 0.3s ease',
+        boxShadow: isHovered ? '0 2px 5px rgba(0,0,0,0.1)' : 'none'
+    });
+
     return (
         <div style={{ position: 'relative', width: '100%', minHeight: '100vh', backgroundColor: '#FBFBFB' }}>
             {/* Header Section */}
@@ -102,7 +122,20 @@ function Index() {
                 <p style={{ fontFamily: 'Cairo', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '250px', marginBottom: '0px', wordSpacing: '1px' }}>سكربات طبية بجودة عالية وتصاميم عملية تناسب ساعات </p>
                 <p style={{ fontFamily: 'Cairo', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '0px', wordSpacing: '5px' }}> العمل الطويل.راحة، متانة، ومقاسات تناسب الجميع  </p>
             </div>
-            <button style={{ position: 'absolute', top: '550px', right: '65px', width: '275px', height: '76px', background: '#1F7A8C', color: 'white', fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', borderRadius: '10px', border: 'none', cursor: 'pointer' }}>تسوق الأن</button>
+            <button
+                style={buttonStyle(isHovered)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                <span style={{
+                    display: 'inline-block',
+                    transition: 'transform 0.3s ease, font-size 0.3s ease',
+                    transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
+                    fontSize: isHovered ? '36px' : '34px'
+                }}>
+                    تسوق الأن
+                </span>
+            </button>
             <div style={{
                 position: 'absolute',
                 top: '53px',
