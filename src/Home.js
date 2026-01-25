@@ -187,12 +187,11 @@ function Index() {
         gap: '30px',
         alignItems: 'center',
         fontFamily: 'El Messiri',
-        fontWeight: 400,
+        fontWeight: 600,
         fontSize: '30px',
         lineHeight: '150%',
         wordSpacing: '20px',
-        color: '#FFFFFF',
-        fontWeight: '600px'
+        color: '#FFFFFF'
       }}>
         <span>أدوات طبية</span>
         <span>نسائي </span>
@@ -263,8 +262,7 @@ function Index() {
               padding: '16px 44px',
               borderRadius: '50px',
               border: 'none',
-              cursor: 'pointer',
-              color: 'main'
+              cursor: 'pointer'
             }}
           >
             <img src='/image/sahm.png' alt="Arrow" style={{ width: '20px', height: '20px' }} />

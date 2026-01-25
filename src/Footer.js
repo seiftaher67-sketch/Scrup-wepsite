@@ -1,5 +1,4 @@
 import React from 'react';
-import { Instagram, Facebook, Mail, MapPin, Phone } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
