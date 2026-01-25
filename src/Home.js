@@ -4,10 +4,26 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Index() {
   const [isHovered, setIsHovered] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const cardsPerView = 3;
+  const images = ['/image/middle.jpg', '/image/nextmiddle.jpg', '/image/therdmiddle.jpg'];
+  const texts = [
+    'لأنك تقضي ساعات طويلة في عملك وتحتاج ملابس تعتمد عليها<br />قدمنا اسكرابات تجمع بين الخامة المريحة والتصميم العصري',
+    'سكرابات طبية بتصميم عصري وخامات مريحة   <br />تمنحك راحة تدوم وثقة تكمّل حضورك في كل مناوبة',
+    'سواء كنتِ في مناوبة طويلة أو يوم عمل مزدحم، سكراباتنا مصممة لتكون جزءًا من راحتك اليومية. </br>لأننا نؤمن أن الراحة تبدأ مما ترتديه، وأن الأداء الأفضل يحتاج إحساس حقيقي بالثقة.'
+  ];
+  const products = [
+    '/image/Header.png',
+    '/image/middle.jpg',
+    '/image/staf1.jpg',
+    '/image/staf2.jpg',
+    '/image/staf3.jpg'
+  ];
 
   const buttonStyle = (isHovered) => ({
     position: 'absolute',
@@ -26,6 +42,13 @@ function Index() {
     transition: 'background 0.3s ease, box-shadow 0.3s ease',
     boxShadow: isHovered ? '0 2px 5px rgba(0,0,0,0.1)' : 'none'
   });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <div style={{ position: 'relative', width: '100%', minHeight: '100vh', backgroundColor: '#FBFBFB' }}>
@@ -106,7 +129,7 @@ function Index() {
           width: '100px',
           height: 'auto',
           position: 'absolute',
-          top: '53px',
+          top: '63px',
           right: '50px',
           borderRadius: '10px',
           marginRight: '30px',
@@ -163,12 +186,13 @@ function Index() {
         flexDirection: 'row',
         gap: '30px',
         alignItems: 'center',
-        color: 'white',
         fontFamily: 'El Messiri',
         fontWeight: 400,
-        fontSize: '24px',
+        fontSize: '30px',
         lineHeight: '150%',
-        wordSpacing: '20px'
+        wordSpacing: '20px',
+        color: '#FFFFFF',
+        fontWeight: '600px'
       }}>
         <span>أدوات طبية</span>
         <span>نسائي </span>
@@ -180,27 +204,34 @@ function Index() {
       <div style={{ position: 'absolute', width: '100%', height: '1100px', top: '995px' }}>
 
         {/* Title */}
-        <div style={{ position: 'absolute', top: '0', right: '80px' }}>
+        <div style={{ position: 'absolute', top: '-30px', right: '85px' }}>
           <h2
             style={{
               fontFamily: 'El Messiri',
               fontWeight: 700,
               fontSize: '56px',
               lineHeight: '84px',
-              margin: 0
+              marginRight: '89px',
+
+
             }}
           >
             الأكثر مبيعًا
           </h2>
+        </div>
 
+        {/* Subtitle */}
+        <div style={{ position: 'absolute', top: '56px', right: '85px' }}>
           <p
             style={{
-              fontFamily: 'Cairo',
+              fontFamily: 'El Messiri',
               fontWeight: 500,
-              fontSize: '28px',
-              lineHeight: '42px',
-              marginTop: '8px',
-              color: '#6B7280'
+              fontSize: '32px',
+              lineHeight: '150%',
+              color: '#1B4B66',
+              marginRight: '89px',
+              direction: 'rtl',
+
             }}
           >
             اختيارات الأطباء والممارسين الصحيين
@@ -208,22 +239,81 @@ function Index() {
         </div>
 
         {/* More Products Button */}
-        <div style={{ position: 'absolute', top: '20px', left: '80px' }}>
-          <button
+        <div style={{ position: 'absolute', top: '50px', left: '50px', marginTop: '-50px' }}>
+          <p
             style={{
-              backgroundColor: '#1B4B66',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px',
               color: 'white',
               fontFamily: 'El Messiri',
               fontWeight: 500,
-              fontSize: '20px',
+              fontStyle: 'normal',
+              fontSize: '32px',
+              leadingTrim: 'none',
+              lineHeight: '150%',
+              letterSpacing: '0%',
+              textAlign: 'center',
+              textDecoration: 'underline',
+              textDecorationStyle: 'solid',
+              textDecorationOffset: '0%',
+              textDecorationThickness: '0%',
+              textDecorationSkipInk: 'auto',
               padding: '16px 44px',
               borderRadius: '50px',
               border: 'none',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              color: 'main'
             }}
           >
+            <img src='/image/sahm.png' alt="Arrow" style={{ width: '20px', height: '20px' }} />
             المزيد من المنتجات
-          </button>
+          </p>
+        </div>
+
+        {/* Left Arrow */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '180px',
+            left: '50%',
+            transform: 'translateX(-50%) translateX(-500px)',
+            width: '50px',
+            height: '50px',
+            borderRadius: '50%',
+            backgroundColor: '#E5E7EB',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: currentIndex > 0 ? 'pointer' : 'not-allowed',
+            opacity: currentIndex > 0 ? 1 : 0.5
+          }}
+          onClick={() => currentIndex > 0 && setCurrentIndex(currentIndex - 1)}
+        >
+          <img src='/image/sahmcard.png' alt="Left Arrow" style={{ width: '20px', height: '20px' }} />
+        </div>
+
+        {/* Right Arrow */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '180px',
+            left: '50%',
+            transform: 'translateX(-50%) translateX(500px)',
+            width: '50px',
+            height: '50px',
+            borderRadius: '50%',
+            backgroundColor: '#E5E7EB',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: currentIndex + cardsPerView < products.length ? 'pointer' : 'not-allowed',
+            opacity: currentIndex + cardsPerView < products.length ? 1 : 0.5
+          }}
+          onClick={() => currentIndex + cardsPerView < products.length && setCurrentIndex(currentIndex + 1)}
+        >
+          <img src='/image/sahmcard.png' alt="Right Arrow" style={{ width: '20px', height: '20px' }} />
         </div>
 
         {/* Product Cards */}
@@ -231,31 +321,27 @@ function Index() {
           style={{
             position: 'absolute',
             top: '180px',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            left: '85px',
             display: 'flex',
-            flexDirection: 'row-reverse',
+            flexDirection: 'row',
             gap: '32px',
             // width:'100%'
           }}
         >
-          {[
-            '/image/staf1.jpg',
-            '/image/staf2.jpg',
-            '/image/staf3.jpg'
-          ].map((img, index) => (
+          {products.slice(currentIndex, currentIndex + cardsPerView).map((img, index) => (
             <div
               key={index}
               style={{
-                width: '405px',
-                height: '522px',
+                width: '400px',
+                height: '495px',
                 backgroundColor: '#fff',
                 borderRadius: '10px',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
                 overflow: 'hidden',
                 fontFamily: 'Cairo',
                 direction: 'rtl',
-                opacity: 1
+                opacity: 1,
+                paddingRight: '0px'
               }}
             >
               {/* Image Wrapper */}
@@ -263,7 +349,7 @@ function Index() {
                 style={{
                   position: 'relative',
                   backgroundColor: '#F7F7F7',
-                  padding: '30px 20px 10px',
+                  padding: '0',
                   textAlign: 'center',
                   height: '382px'
                 }}
@@ -279,25 +365,53 @@ function Index() {
                   }}
                 />
 
-                {/* Arrow */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: '16px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: '50%',
-                    backgroundColor: '#E5E7EB',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer'
-                  }}
-                >
-                  ‹
-                </div>
+                {/* Left Arrow for first card */}
+                {index === 0 && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: '1px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '50%',
+                      backgroundColor: '#E5E7EB',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: currentIndex > 0 ? 'pointer' : 'not-allowed',
+                      opacity: currentIndex > 0 ? 1 : 0.5
+                    }}
+                    onClick={() => currentIndex > 0 && setCurrentIndex(currentIndex - 1)}
+                  >
+                    <img src='/image/sahmcard.png' alt="sahmcard.png" />
+                  </div>
+                )}
+
+                {/* Right Arrow for last card */}
+                {index === cardsPerView - 1 && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      right: '1px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '50%',
+                      backgroundColor: '#E5E7EB',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: currentIndex + cardsPerView < products.length ? 'pointer' : 'not-allowed',
+                      opacity: currentIndex + cardsPerView < products.length ? 1 : 0.5
+                    }}
+                    onClick={() => currentIndex + cardsPerView < products.length && setCurrentIndex(currentIndex + 1)}
+                  >
+                    <img src='/image/sahmcard11.png' alt="sahmcard11.png" />
+                  </div>
+                )}
               </div>
 
               {/* Content */}
@@ -314,9 +428,12 @@ function Index() {
                   {/* Title on left */}
                   <h3
                     style={{
-                      fontFamily: 'El Messiri',
-                      fontWeight: 600,
-                      fontSize: '20px',
+                      fontFamily: 'Cairo',
+                      fontWeight: 500,
+                      fontSize: '24px',
+                      lineHeight: '150%',
+                      letterSpacing: '0%',
+                      color: '#000000',
                       margin: 0
                     }}
                   >
@@ -334,8 +451,8 @@ function Index() {
                       <span
                         key={i}
                         style={{
-                          width: '16px',
-                          height: '16px',
+                          width: '23px',
+                          height: '23px',
                           borderRadius: '50%',
                           backgroundColor: c
                         }}
@@ -358,12 +475,26 @@ function Index() {
                   {/* Price */}
                   <p
                     style={{
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      margin: 0
+                      fontFamily: 'Cairo',
+                      fontWeight: 500,
+                      fontSize: '24px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      margin: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '5px'
                     }}
                   >
-                    250 ريال
+                    250
+                    <img
+                      src="/image/ry.jpeg"
+                      alt="ريال"
+                      style={{
+                        height: '18px',
+                        width: 'auto'
+                      }}
+                    />
                   </p>
 
                   <button
@@ -373,9 +504,13 @@ function Index() {
                       border: 'none',
                       borderRadius: '8px',
                       padding: '8px 16px',
-                      fontSize: '14px',
+                      fontSize: '17px',
                       fontWeight: 600,
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      width: '140px',
+                      fontFamily: 'Cairo',
+
+
                     }}
                   >
                     + أضف للسلة
@@ -390,18 +525,48 @@ function Index() {
 
       {/* Middle Image Section */}
       <img
-        src="/image/middle.jpg"
+        src={images[currentImageIndex]}
         alt="Middle"
         style={{
           position: 'absolute',
           top: '1800px',
           left: '85px',
-          width: '95%',
+          width: '1264px',
           height: '719px',
           borderRadius: '8px'
 
         }}
       />
+      <div
+        style={{
+          position: 'absolute',
+          top: '1800px',
+          left: '85px',
+          width: '1264px',
+          height: '719px',
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-end',
+          pointerEvents: 'none'
+        }}
+      >
+        <p
+          style={{
+            fontFamily: 'El Messiri',
+            fontWeight: 600,
+            fontSize: '32px',
+            lineHeight: '140%',
+            letterSpacing: '0%',
+            textAlign: 'right',
+            color: 'white',
+            direction: 'rtl',
+            margin: 0,
+            padding: '0px 20px 10px 170px'
+
+          }}
+          dangerouslySetInnerHTML={{ __html: texts[currentImageIndex] }}
+        />
+      </div>
 
       {/* Footer Text Section */}
       <div style={{
