@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 function Index() {
   const cardsPerView = 3;
@@ -331,7 +332,7 @@ function Index() {
       }}>
         <span>أدوات طبية</span>
         <span>نسائي </span>
-        <span>رجالي</span>
+        <Link to="/men" style={{ color: '#FFFFFF', textDecoration: 'none' }}>رجالي</Link>
         <span>الرئيسية </span>
       </div>
 

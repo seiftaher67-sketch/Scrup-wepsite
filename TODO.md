@@ -1,4 +1,2 @@
-- [x] Modify Home.js to add overlay text on x3.jpg with three sentences for masculine scrubs using the specified font style.
-- [x] Test the changes to ensure the text is displayed correctly.
-- [x] Add a "Shop Now" button below the text on x3.jpg with specified dimensions and color.
-- [x] Add animation to the main title and description text on the home page to appear after 2 seconds with slow fade-in and slide-up effect.
+- [x] Add two more product card sections (Best Sellers Section 3 and 4) to src/Men.js
+- [x] Adjust the main div height to accommodate the new sections
