@@ -16,6 +16,7 @@ const Footer = () => {
         <h2>بتصميم عصري وخامات مريحة</h2>
         <h2>تساعدك علي التركيز في شغلك</h2>
         <h2>بثقة وراحة طوال اليوم</h2>
+    
         <div id='socal'>
           <img src='/image/instagram.png' alt='instagram' />
           <img src='/image/tiktok.png' alt='tiktok' />

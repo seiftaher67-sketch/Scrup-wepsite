@@ -25,6 +25,14 @@ function Index() {
     'يمنح شعور بالثقة والاحترافية في العمل.'
   ];
 
+  const cardNames = [
+    'د. محمود',
+    'د. هدي',
+    'د. أحمد',
+    'د. فاطمة',
+    'د. علي'
+  ];
+
   const [isHovered, setIsHovered] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -33,6 +41,7 @@ function Index() {
   const [isButtonHoveredX1, setIsButtonHoveredX1] = useState(false);
   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
   const [currentComment, setCurrentComment] = useState(cardTexts[2]);
+  const [currentName, setCurrentName] = useState(cardNames[2]);
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleX3, setIsVisibleX3] = useState(false);
   const [isTitle1Visible, setIsTitle1Visible] = useState(false);
@@ -115,10 +124,12 @@ function Index() {
   useEffect(() => {
     if (hoveredCardIndex !== null) {
       setCurrentComment(cardTexts[hoveredCardIndex]);
+      setCurrentName(cardNames[hoveredCardIndex]);
     } else {
       setCurrentComment(cardTexts[2]);
+      setCurrentName(cardNames[2]);
     }
-  }, [hoveredCardIndex, cardTexts]);
+  }, [hoveredCardIndex, cardTexts, cardNames]);
 
   useEffect(() => {
     const timer1 = setTimeout(() => setIsVisibleCard1(true), 1000);
@@ -389,8 +400,8 @@ function Index() {
               lineHeight: '150%',
               letterSpacing: '0%',
               textAlign: 'center',
-              marginTop:'50px',
-              marginLeft:'70px'
+              marginTop: '50px',
+              marginLeft: '70px'
             }}
           >
             <img src='/image/sahm.png' alt="Arrow" style={{ width: '20px', height: '20px' }} />
@@ -571,7 +582,7 @@ function Index() {
                   <div
                     style={{
                       display: 'flex',
-                      gap: '10px'
+                      gap: '5px'
                     }}
                   >
                     {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
@@ -581,7 +592,8 @@ function Index() {
                           width: '23px',
                           height: '23px',
                           borderRadius: '50%',
-                          backgroundColor: c
+                          backgroundColor: c,
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
                         }}
                       />
                     ))}
@@ -989,6 +1001,24 @@ function Index() {
           }}>
             “مقاسه مظبوط والتفصيل عملي. واضح إن التصميم معمول لناس شغالة فعلًا.”
           </div>
+          <div style={{
+            position: 'absolute',
+            top: '75%',
+            transform: 'translateY(-50%)',
+            right: '20px',
+            width: 'calc(100% - 40px)',
+            fontFamily: 'Cairo',
+            fontWeight: 600,
+            fontSize: '20px',
+            lineHeight: '28px',
+            letterSpacing: '0px',
+            textAlign: 'right',
+            direction: 'rtl',
+            opacity: 1,
+            color: '#1B4B66'
+          }}>
+            {cardNames[0]}
+          </div>
         </div>
         <div
           style={{
@@ -1035,6 +1065,24 @@ function Index() {
           }}>
             مريح وسهل التنظيف، مثالي للعمل اليومي.
           </div>
+          <div style={{
+            position: 'absolute',
+            top: '85%',
+            transform: 'translateY(-50%)',
+            right: '20px',
+            width: 'calc(100% - 40px)',
+            fontFamily: 'Cairo',
+            fontWeight: 600,
+            fontSize: '20px',
+            lineHeight: '28px',
+            letterSpacing: '0px',
+            textAlign: 'right',
+            direction: 'rtl',
+            opacity: 1,
+            color: '#1B4B66'
+          }}>
+            {cardNames[1]}
+          </div>
         </div>
         <div style={{
           position: 'absolute',
@@ -1061,7 +1109,7 @@ function Index() {
           />
           <div style={{
             position: 'absolute',
-            top: '45%',
+            top: '40%',
             transform: hoveredCardIndex !== null ? 'translateY(-50%) translateY(0)' : 'translateY(-50%) translateY(20px)',
             right: '20px',
             width: 'calc(100% - 40px)',
@@ -1076,6 +1124,25 @@ function Index() {
             transition: 'transform 1s ease'
           }}>
             {currentComment}
+          </div>
+          <div style={{
+            position: 'absolute',
+            top: '85%',
+            transform: hoveredCardIndex !== null ? 'translateY(-50%) translateY(0)' : 'translateY(-50%) translateY(20px)',
+            right: '20px',
+            width: 'calc(100% - 40px)',
+            fontFamily: 'Cairo',
+            fontWeight: 600,
+            fontSize: '20px',
+            lineHeight: '28px',
+            letterSpacing: '0px',
+            textAlign: 'right',
+            direction: 'rtl',
+            opacity: 1,
+            transition: 'transform 1s ease',
+            color: '#1B4B66'
+          }}>
+            {currentName}
           </div>
         </div>
         <div
@@ -1122,6 +1189,24 @@ function Index() {
             direction: 'rtl'
           }}>
             الألوان متنوعة والمقاسات مناسبة للجميع.
+          </div>
+          <div style={{
+            position: 'absolute',
+            top: '75%',
+            transform: 'translateY(-50%)',
+            right: '20px',
+            width: 'calc(100% - 40px)',
+            fontFamily: 'Cairo',
+            fontWeight: 600,
+            fontSize: '20px',
+            lineHeight: '28px',
+            letterSpacing: '0px',
+            textAlign: 'right',
+            direction: 'rtl',
+            opacity: 1,
+            color: '#1B4B66'
+          }}>
+            {cardNames[3]}
           </div>
         </div>
         <div
@@ -1174,6 +1259,24 @@ function Index() {
             direction: 'rtl'
           }}>
             يمنح شعور بالثقة والاحترافية في العمل.
+          </div>
+          <div style={{
+            position: 'absolute',
+            top: '75%',
+            transform: 'translateY(-50%)',
+            right: '20px',
+            width: 'calc(100% - 40px)',
+            fontFamily: 'Cairo',
+            fontWeight: 600,
+            fontSize: '20px',
+            lineHeight: '28px',
+            letterSpacing: '0px',
+            textAlign: 'right',
+            direction: 'rtl',
+            opacity: 1,
+            color: '#1B4B66'
+          }}>
+            {cardNames[4]}
           </div>
         </div>
       </div>
