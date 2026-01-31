@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Login from './Login';
 import SortFilter from './SortFilter';
 
 function Women() {
@@ -20,6 +21,9 @@ function Women() {
   const [isButtonHoveredX1, setIsButtonHoveredX1] = useState(false);
   const [isButtonHoveredX2, setIsButtonHoveredX2] = useState(false);
   const [sortType, setSortType] = useState('');
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSort = (type) => {
     setSortType(type);
@@ -93,6 +97,7 @@ function Women() {
       <img
         src="/image/logo.png"
         alt="Logo"
+        onClick={() => navigate('/')}
         style={{
           width: '100px',
           height: 'auto',
@@ -101,7 +106,8 @@ function Women() {
           right: '50px',
           borderRadius: '10px',
           marginRight: '30px',
-          marginTop: '0px'
+          marginTop: '0px',
+          cursor: 'pointer'
         }}
       />
       <div style={{ position: 'absolute', top: '60px', right: '60px', lineHeight: '-20px' }}>
@@ -144,12 +150,14 @@ function Women() {
         gap: '30px',
         alignItems: 'center'
       }}>
-        <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(251, 251, 251, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '90px' }}>
-          <img src="/image/icon1.png" alt="Icon 1" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
+        <div onClick={() => setShowLoginModal(true)} style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(251, 251, 251, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '90px', cursor: 'pointer' }}>
+          <img src="/image/icon2.png" alt="Icon 2" onClick={() => setShowLoginModal(true)} style={{ width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer' }} />
         </div>
-        <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(251, 251, 251, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src="/image/icon2.png" alt="Icon 2" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
-        </div>
+        <Link to="/product-detail" style={{ textDecoration: 'none' }}>
+          <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(251, 251, 251, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+            <img src="/image/icon1.png" alt="Icon 1" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
+          </div>
+        </Link>
         <div style={{ position: 'relative', width: '295px', height: '70px' }}>
           <input type="text" placeholder="أبحث عن منتج" dir="rtl" style={{ width: '100%', height: '100%', borderRadius: '50px', backgroundColor: '#FBFBFB', opacity: 1, border: 'none', padding: '0 60px 0 20px', fontFamily: 'El Messiri', fontWeight: 400, fontSize: '24px', lineHeight: '150%', outline: 'none', backgroundImage: 'url(/image/adca.png)', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 20px center', backgroundSize: '20px 20px' }} />
         </div>
@@ -273,6 +281,7 @@ function Women() {
                     style={{
                       display: 'flex',
                       gap: '5px'
+
                     }}
                   >
                     {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
@@ -689,7 +698,36 @@ function Women() {
         </div>
       </div>
 
-
+      {/* Spacer for scrolling */}
+      {showLoginModal && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 1000
+          }}
+          onClick={() => setShowLoginModal(false)}
+        >
+          <div
+            style={{
+              transform: 'scale(0.5)',
+              transformOrigin: 'center'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ background: 'transparent' }}>
+              <Login />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

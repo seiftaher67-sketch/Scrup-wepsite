@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,14 +10,16 @@ const Footer = () => {
         fontFamily: 'sans-serif',
       }}>
       <div id='logoftoer'>
-        <img src='/image/flogo.png' alt='logo' />
+        <Link to="/" style={{ cursor: 'pointer' }}>
+          <img src='/image/flogo.png' alt='logo' style={{ pointerEvents: 'none' }} />
+        </Link>
       </div>
       <div id='decfooter'>
         <h2>نقدم سكربات وأدوات طبية</h2>
         <h2>بتصميم عصري وخامات مريحة</h2>
         <h2>تساعدك علي التركيز في شغلك</h2>
         <h2>بثقة وراحة طوال اليوم</h2>
-    
+
         <div id='socal'>
           <img src='/image/instagram.png' alt='instagram' />
           <img src='/image/tiktok.png' alt='tiktok' />

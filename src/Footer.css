@@ -148,9 +148,8 @@
 }
 
 .footer-container img:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5)) brightness(1.2);
     transform: scale(1.1);
-    filter: brightness(1.2);
 }
 
 .footer-container a {

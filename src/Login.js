@@ -14,6 +14,7 @@ export default function Login() {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700;800&display=swap');
         * {
           box-sizing: border-box;
           font-family: "Cairo", sans-serif;
@@ -98,11 +99,11 @@ export default function Login() {
           border: none;
           border-radius: 6px;
           color: #fff;
-          font-size: 32px;
+          font-size: 37px;
           font-weight: 600;
           cursor: pointer;
           display: block;
-          margin: 110px auto 0;
+          margin: 80px auto 0;
         }
 
         .login-btn:hover {

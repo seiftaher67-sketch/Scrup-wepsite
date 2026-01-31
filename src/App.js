@@ -9,6 +9,8 @@ import VerifyCode from './VerifyCode';
 import Footer from './Footer';
 import WashingGuide from './WashingGuide';
 import ReturnPolicy from './ReturnPolicy';
+import Purchase from './Purchase';
+import ProductDetail from './ProductDetail';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/washing-guide" element={<WashingGuide />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
+          <Route path="/purchase" element={<Purchase />} />
+          <Route path="/product-detail" element={<ProductDetail />} />
         </Routes>
         <Footer />
       </div>
