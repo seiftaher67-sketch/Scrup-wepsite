@@ -37,7 +37,7 @@ export default function SortFilter({ onSort }) {
             <div
                 onClick={() => setOpen(!open)}
                 style={{
-                    width: "100%",
+                    width: "120%",
                     height: "56px",
                     borderRadius: "14px",
                     background: "#EDEDED",
