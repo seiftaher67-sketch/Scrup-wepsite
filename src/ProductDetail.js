@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function ProductDetail() {
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      name: "سكراب ميديكال",
+      size: "M",
+      color: "أحمر",
+      quantity: 1,
+      price: 250,
+      image: "/image/girl1.jpg",
+    },
+    {
+      id: 2,
+      name: "سكراب ميديكال",
+      size: "M",
+      color: "أحمر",
+      quantity: 1,
+      price: 250,
+      image: "/image/girl1.jpg",
+    },
+  ]);
+
+  const updateQuantity = (id, newQuantity) => {
+    if (newQuantity > 0) {
+      setCartItems(cartItems.map(item =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      ));
+    }
+  };
+
+  const removeItem = (id) => {
+    setCartItems(cartItems.filter(item => item.id !== id));
+  };
+
+  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const shipping = 20;
+  const total = subtotal + shipping;
 
   return (
     <div style={{ position: 'relative', width: '100%', minHeight: '100vh', backgroundColor: '#FBFBFB' }}>
-      {/* Top Header Bar - Same as Home */}
+      {/* Top Header Bar */}
       <Link to="/" style={{ cursor: 'pointer' }}>
         <img
           src="/image/LOGOS.png"
@@ -15,7 +51,7 @@ function ProductDetail() {
             height: 'auto',
             position: 'fixed',
             top: '20px',
-            right: '50px',
+            right: '0px',
             borderRadius: '10px',
             marginRight: '30px',
             marginTop: '0px',
@@ -68,18 +104,11 @@ function ProductDetail() {
           justifyContent: 'center',
           marginLeft: '90px',
           cursor: 'pointer',
-          transform: 'rotate(0deg)',
-          opacity: 1,
           boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
         }}>
           <img src="/image/icon2.png" alt="Icon 2" style={{
-            position: 'absolute',
             width: '32px',
             height: '32px',
-            top: '19px',
-            left: '19px',
-            transform: 'rotate(0deg)',
-            opacity: 1,
             filter: 'brightness(0) saturate(100%) invert(8%) sepia(65%) saturate(1414%) hue-rotate(185deg)'
           }} />
         </div>
@@ -94,18 +123,11 @@ function ProductDetail() {
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
-            transform: 'rotate(0deg)',
-            opacity: 1,
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
           }}>
             <img src="/image/icon1.png" alt="Icon 1" style={{
-              position: 'absolute',
               width: '32px',
               height: '32px',
-              top: '19px',
-              left: '19px',
-              transform: 'rotate(0deg)',
-              opacity: 1,
               filter: 'brightness(0) saturate(100%) invert(8%) sepia(65%) saturate(1414%) hue-rotate(185deg)'
             }} />
           </div>
@@ -113,9 +135,7 @@ function ProductDetail() {
         <div style={{
           position: 'relative',
           width: '295px',
-          height: '70px',
-          transform: 'rotate(0deg)',
-          opacity: 1
+          height: '70px'
         }}>
           <input
             type="text"
@@ -127,7 +147,6 @@ function ProductDetail() {
               marginLeft: '30px',
               borderRadius: '50px',
               backgroundColor: '#FBFBFB',
-              opacity: 1,
               border: '1px solid #BFBFBF',
               padding: '0 60px 0 20px',
               fontFamily: 'El Messiri',
@@ -158,8 +177,328 @@ function ProductDetail() {
         zIndex: 11
       }}></div>
 
+      {/* Main Content */}
+      <div style={{ marginTop: '130px', padding: '40px 50px', direction: 'rtl', backgroundColor: '#FBFBFB', minHeight: 'calc(100vh - 130px)' }}>
 
-    </div >
+        {/* Page Title */}
+        <h1 style={{
+          fontFamily: 'El Messiri',
+          fontWeight: 400,
+          fontSize: '55px',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+          color: '#0F0F0F',
+          marginBottom: '8px',
+          marginTop: '0',
+          textAlign: 'right'
+        }}>
+          السلة
+        </h1>
+
+        {/* Subtitle */}
+        <p style={{
+          fontFamily: 'Calibri',
+          fontWeight: 400,
+          fontSize: '32px',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+          color: '#3F4254',
+          marginBottom: '30px',
+          textAlign: 'right'
+        }}>
+          باقى خطوة وتوصلك راحتك
+        </p>
+
+        {/* Cart Items */}
+        <div style={{ marginBottom: '30px' }}>
+          {cartItems.map((item) => (
+            <div
+              key={item.id}
+              style={{
+                display: 'flex',
+                gap: '20px',
+                padding: '20px',
+                backgroundColor: '#FFF',
+                borderRadius: '8px',
+                border: '1px solid #E8E8E8',
+                marginBottom: '16px',
+                alignItems: 'flex-start',
+                fontFamily: 'Cairo'
+              }}
+            >
+              {/* Left Side - Image and Info (formerly Right) */}
+              <div style={{
+                display: 'flex',
+                gap: '12px',
+                alignItems: 'flex-start',
+                flexShrink: 0
+              }}>
+                {/* Product Image */}
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  style={{
+                    width: '280px',
+                    height: '260px',
+                    objectFit: 'cover',
+                    borderRadius: '6px'
+                  }}
+                />
+
+                {/* Name and Info Column */}
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '6px',
+                  textAlign: 'right'
+                }}>
+                  {/* Product Name */}
+                  <h3 style={{
+                    fontFamily: 'Cairo',
+                    fontWeight: 600,
+                    fontStyle: 'normal',
+                    fontSize: '24px',
+                    lineHeight: '24px',
+                    letterSpacing: '0px',
+                    textAlign: 'right',
+                    color: '#0F0F0F',
+                    margin: '0'
+                  }}>
+                    {item.name}
+                  </h3>
+
+                  {/* Size, Color, Quantity Info */}
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '6px',
+                    fontSize: '12px',
+                    color: '#666',
+                    fontFamily: 'Calibri',
+                    minWidth: '70px'
+                  }}>
+                    <div>
+                      <span style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '20px', letterSpacing: '0px' }}>المقاس:</span> <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '20px', lineHeight: '50px', letterSpacing: '0px' }}>{item.size}</span>
+                    </div>
+                    <div>
+                      <span style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '20px', letterSpacing: '0px' }}>اللون:</span> <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '20px', lineHeight: '50px', letterSpacing: '0px' }}>{item.color}</span>
+                    </div>
+                    <div>
+                      <span style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '20px', letterSpacing: '0px' }}>الكمية:</span> <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '20px', lineHeight: '50px', letterSpacing: '0px' }}>{item.quantity.toLocaleString('en-US')}</span>
+                    </div>
+                    {/* Controls */}
+                    <div style={{
+                      display: 'flex',
+                      gap: '8px',
+                      marginTop: '10px'
+                    }}>
+                      {/* Quantity Controls */}
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0',
+                        border: '2px solid #999',
+                        borderRadius: '2px',
+                        backgroundColor: '#FFF',
+                        width: '140px',
+                        height: '50px',
+                        opacity: 1,
+                        transform: 'rotate(0deg)',
+                        borderRight: 'none'
+                      }}>
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          style={{
+                            width: '40px',
+                            height: '44px',
+                            border: 'none',
+                            backgroundColor: '#FFF',
+                            cursor: 'pointer',
+                            fontSize: '30px',
+                            fontFamily: 'Calibri',
+                            fontWeight: 600,
+                            outline: 'none'
+                          }}
+                        >
+                          +
+                        </button>
+                        <input
+                          type="number"
+                          min="1"
+                          value={item.quantity}
+                          onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                          dir="ltr"
+                          style={{
+                            width: '40px',
+                            height: '44px',
+                            border: 'none',
+                            textAlign: 'center',
+                            fontSize: '24px',
+                            fontFamily: 'Calibri',
+                            outline: 'none',
+                            backgroundColor: '#FFF'
+                          }}
+                        />
+                        <button
+                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                          style={{
+                            width: '40px',
+                            height: '44px',
+                            border: 'none',
+                            backgroundColor: '#FFF',
+                            cursor: 'pointer',
+                            fontSize: '30px',
+                            fontFamily: 'Calibri',
+                            fontWeight: 600,
+                            outline: 'none'
+                          }}
+                        >
+                          −
+                        </button>
+                      </div>
+                      <button
+                        onClick={() => removeItem(item.id)}
+                        style={{
+                          width: '93px',
+                          height: '50px',
+                          border: '2px solid #999',
+                          backgroundColor: '#FFF',
+                          cursor: 'pointer',
+                          position: 'relative',
+                          borderRadius: '2px',
+                          opacity: 1,
+                          transform: 'rotate(0deg)'
+                        }}
+                      >
+                        <img src="/image/del.png" alt="Delete" style={{
+                          position: 'absolute',
+                          width: '32px',
+                          height: '32px',
+                          top: '9px',
+                          left: '31px',
+                          opacity: 1,
+                          transform: 'rotate(0deg)'
+                        }} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Center - Empty */}
+              <div style={{
+                textAlign: 'right',
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px'
+              }}>
+              </div>
+
+              {/* Right Side - Price and Ry Image (formerly Left) */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '12px',
+                minWidth: '70px'
+              }}>
+                {/* Price */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  whiteSpace: 'nowrap'
+                }}>
+                  <span style={{
+                    fontFamily: 'Cairo',
+                    fontWeight: 600,
+                    fontStyle: 'SemiBold',
+                    fontSize: '32px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    textAlign: 'right',
+                    color: '#0F0F0F'
+                  }}>
+                    {item.price.toLocaleString('en-US')}
+                  </span>
+                  <img
+                    src="/image/ry.jpeg"
+                    alt="ريال"
+                    style={{
+                      width: '50px',
+                      height: '30px',
+                      objectFit: 'contain',
+                      opacity: 1,
+                      transform: 'rotate(0deg)'
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Summary Section */}
+        <div style={{
+          backgroundColor: '#017A9F',
+          borderRadius: '6px',
+          padding: '16px 20px',
+          marginBottom: '24px',
+          textAlign: 'center',
+          color: '#FFF',
+          fontFamily: 'Calibri',
+          fontWeight: 400,
+          fontSize: '18px'
+        }}>
+          ملخص الشراء
+        </div>
+
+        {/* Summary Details */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'auto 1fr',
+          gap: '24px 40px',
+          padding: '20px',
+          backgroundColor: '#FFF',
+          borderRadius: '8px',
+          border: '1px solid #EEE',
+          marginBottom: '40px',
+          maxWidth: '400px',
+          marginLeft: 'auto'
+        }}>
+          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '14px', color: '#666' }}>مصاريف التوصيل</span>
+          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '14px', color: '#666', textAlign: 'left' }}>{shipping.toLocaleString('en-US')} ر.س</span>
+
+          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '14px', color: '#666' }}>مجموع الكامل</span>
+          <span style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '16px', color: '#0F0F0F', textAlign: 'left' }}>{total.toLocaleString('en-US')} ر.س</span>
+        </div>
+
+        {/* Checkout Button */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <button style={{
+              fontFamily: 'Calibri',
+              fontWeight: 400,
+              fontSize: '16px',
+              lineHeight: '100%',
+              backgroundColor: '#017A9F',
+              color: '#FFF',
+              padding: '14px 60px',
+              borderRadius: '6px',
+              border: 'none',
+              cursor: 'pointer',
+              outline: 'none'
+            }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#015a7d'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#017A9F'}
+            >
+              الدفع والشراء
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
