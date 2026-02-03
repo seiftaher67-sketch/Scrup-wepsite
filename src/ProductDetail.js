@@ -74,7 +74,8 @@ function ProductDetail() {
         lineHeight: '150%',
         wordSpacing: '5px',
         color: '#022B3A',
-        zIndex: 10
+        zIndex: 10,
+        backgroundColor: '#FBFBFB'
       }}>
         <Link to="/medical-tools" style={{ color: '#022B3A', textDecoration: 'none' }}>أدوات طبية</Link>
         <Link to="/women" style={{ color: '#022B3A', textDecoration: 'none' }}>نسائي</Link>
@@ -91,14 +92,15 @@ function ProductDetail() {
         flexDirection: 'row',
         gap: '15px',
         alignItems: 'center',
-        zIndex: 10
+        zIndex: 10,
+        backgroundColor: '#FBFBFB'
       }}>
         <div style={{
           position: 'relative',
           width: '70px',
           height: '70px',
           borderRadius: '1000px',
-          backgroundColor: '#FBFBFB30',
+          backgroundColor: '#FBFBFB',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -118,7 +120,7 @@ function ProductDetail() {
             width: '70px',
             height: '70px',
             borderRadius: '1000px',
-            backgroundColor: '#FBFBFB30',
+            backgroundColor: '#FBFBFB',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -411,14 +413,10 @@ function ProductDetail() {
                   whiteSpace: 'nowrap'
                 }}>
                   <span style={{
-                    fontFamily: 'Cairo',
+                    fontSize: '24px',
                     fontWeight: 600,
-                    fontStyle: 'SemiBold',
-                    fontSize: '32px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    textAlign: 'right',
-                    color: '#0F0F0F'
+                    color: '#0F0F0F',
+                    fontFamily: 'Calibri'
                   }}>
                     {item.price.toLocaleString('en-US')}
                   </span>
@@ -426,11 +424,9 @@ function ProductDetail() {
                     src="/image/ry.jpeg"
                     alt="ريال"
                     style={{
-                      width: '50px',
+                      width: '30px',
                       height: '30px',
-                      objectFit: 'contain',
-                      opacity: 1,
-                      transform: 'rotate(0deg)'
+                      objectFit: 'contain'
                     }}
                   />
                 </div>
@@ -441,17 +437,18 @@ function ProductDetail() {
 
         {/* Summary Section */}
         <div style={{
-          backgroundColor: '#017A9F',
+          backgroundColor: '#1F7A8C',
           borderRadius: '6px',
           padding: '16px 20px',
           marginBottom: '24px',
           textAlign: 'center',
           color: '#FFF',
           fontFamily: 'Calibri',
-          fontWeight: 400,
-          fontSize: '18px'
+          fontWeight: 600,
+          fontSize: '32px',
+          fontFamily: 'El Messiri'
         }}>
-          ملخص الشراء
+          إتمام الشراء
         </div>
 
         {/* Summary Details */}
@@ -463,40 +460,22 @@ function ProductDetail() {
           backgroundColor: '#FFF',
           borderRadius: '8px',
           border: '1px solid #EEE',
-          marginBottom: '40px',
-          maxWidth: '400px',
-          marginLeft: 'auto'
+          marginBottom: '40px'
         }}>
-          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '14px', color: '#666' }}>مصاريف التوصيل</span>
-          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '14px', color: '#666', textAlign: 'left' }}>{shipping.toLocaleString('en-US')} ر.س</span>
+          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666', textAlign: 'right' }}>مصاريف التوصيل</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
+            <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666' }}>{shipping.toLocaleString('en-US')}</span>
+            <img src="/image/ry.jpeg" alt="ريال" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
+          </div>
 
-          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '14px', color: '#666' }}>مجموع الكامل</span>
-          <span style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '16px', color: '#0F0F0F', textAlign: 'left' }}>{total.toLocaleString('en-US')} ر.س</span>
+          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666', textAlign: 'right' }}>مجموع الكامل</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
+            <span style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '24px', color: '#0F0F0F' }}>{total.toLocaleString('en-US')}</span>
+            <img src="/image/ry.jpeg" alt="ريال" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
+          </div>
         </div>
 
-        {/* Checkout Button */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <button style={{
-              fontFamily: 'Calibri',
-              fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '100%',
-              backgroundColor: '#017A9F',
-              color: '#FFF',
-              padding: '14px 60px',
-              borderRadius: '6px',
-              border: 'none',
-              cursor: 'pointer',
-              outline: 'none'
-            }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#015a7d'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#017A9F'}
-            >
-              الدفع والشراء
-            </button>
-          </Link>
-        </div>
+
       </div>
     </div>
   );

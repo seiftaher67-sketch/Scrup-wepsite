@@ -27,9 +27,15 @@ const Footer = () => {
         </div>   </div>
       <div id='footerlink'>
         <h2>روابط مهمة</h2>
-        <p>الرئيسية</p>
-        <p>تعلميات الغسيل و العناية بالاقمشة</p>
-        <p>سياسية الاستبدال والاسترجاع</p>
+        <Link to="/" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
+          <p style={{ cursor: 'pointer' }}>الرئيسية</p>
+        </Link>
+        <Link to="/washing-guide" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
+          <p style={{ cursor: 'pointer' }}>تعلميات الغسيل و العناية بالاقمشة</p>
+        </Link>
+        <Link to="/return-policy" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
+          <p style={{ cursor: 'pointer' }}>سياسية الاستبدال والاسترجاع</p>
+        </Link>
 
       </div>
       <div id='footerconect'>
