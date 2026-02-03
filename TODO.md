@@ -1,13 +1,13 @@
-# TODO: Enlarge Riyal Image and Price in ProductDetail.js
-
-- [x] Update Riyal image size from 18px x 18px to 30px x 30px
-- [x] Update price font size from 16px to 20px
-- [x] Enlarge price font size further (from 20px to 24px)
-- [x] Verify changes in the application
-
-# TODO: Fix Header Overlap on Product Details Page
-
-- [x] Add solid background color to navigation links div to make it opaque
-- [x] Add solid background color to icons/search div to make it opaque
-- [x] Change icon div backgrounds from semi-transparent to fully opaque
-- [x] Verify that content no longer overlaps behind the header when scrolling
+- [x] Change search input border from #BFBFBF to #C1C1C1
+- [ ] Change full name input border from #DDD to #C1C1C1
+- [ ] Change phone input border from #DDD to #C1C1C1
+- [ ] Change address input border from #DDD to #C1C1C1
+- [ ] Change district input border from #DDD to #C1C1C1
+- [ ] Change building number input border from #DDD to #C1C1C1
+- [ ] Change apartment input border from #DDD to #C1C1C1
+- [ ] Change card number input border from #DDD to #C1C1C1
+- [ ] Change CVV input border from #DDD to #C1C1C1
+- [ ] Change expiry date input border from #DDD to #C1C1C1
+- [ ] Change map div border from #DDD to #C1C1C1
+- [ ] Change order items border from #DFDFDF to #C1C1C1
+- [ ] Change price summary border from #EEE to #C1C1C1

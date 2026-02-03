@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate('/');
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100); // Small delay to ensure navigation completes
+  };
+
   return (
     <footer dir="rtl" className="footer-container w-full text-white py-6 px-4 md:px-12"
       style={{
@@ -27,9 +36,9 @@ const Footer = () => {
         </div>   </div>
       <div id='footerlink'>
         <h2>روابط مهمة</h2>
-        <Link to="/" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
-          <p style={{ cursor: 'pointer' }}>الرئيسية</p>
-        </Link>
+        <p onClick={handleHomeClick} style={{ cursor: 'pointer', color: 'inherit', textDecoration: 'none' }}>
+          الرئيسية
+        </p>
         <Link to="/washing-guide" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
           <p style={{ cursor: 'pointer' }}>تعلميات الغسيل و العناية بالاقمشة</p>
         </Link>

@@ -35,7 +35,7 @@ export default function Login() {
 
         .login-card {
           width: 800px;
-          height: 850px;
+          height: 950px;
           background: #ffffff;
           border-radius: 10px;
           padding: 70px 60px;
@@ -68,8 +68,8 @@ export default function Login() {
 
         .field label {
           display: block;
-          font-size: 30px;
-          color: #3F4254;
+          font-size: 34px;
+          color: #000000;
           margin-bottom: 14px;
         }
 
@@ -86,9 +86,15 @@ export default function Login() {
         }
 
         .field input::placeholder {
-          font-size: 28px;
-          color: #aaa;
+          font-family: Cairo;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 30px;
+          leading-trim: none;
+          line-height: 100%;
+          letter-spacing: 0%;
           text-align: right;
+          color: #aaa;
         }
 
         /* ====== BUTTON ====== */

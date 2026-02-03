@@ -442,20 +442,24 @@ function ProductDetail() {
         </div>
 
         {/* Summary Section */}
-        <div style={{
-          backgroundColor: '#1F7A8C',
-          borderRadius: '6px',
-          padding: '16px 20px',
-          marginBottom: '24px',
-          textAlign: 'center',
-          color: '#FFF',
-          fontFamily: 'Calibri',
-          fontWeight: 600,
-          fontSize: '32px',
-          fontFamily: 'El Messiri'
-        }}>
-          إتمام الشراء
-        </div>
+        <Link to="/purchase" style={{ textDecoration: 'none' }}>
+          <div style={{
+            backgroundColor: '#1F7A8C',
+            borderRadius: '6px',
+            padding: '16px 20px',
+            marginBottom: '24px',
+            textAlign: 'center',
+            color: '#FFF',
+            fontFamily: 'Calibri',
+            fontWeight: 600,
+            fontSize: '32px',
+            fontFamily: 'El Messiri',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease'
+          }}>
+            إتمام الشراء
+          </div>
+        </Link>
 
         {/* Summary Details */}
         <div style={{
