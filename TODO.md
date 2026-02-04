@@ -1,13 +1,2 @@
-- [x] Change search input border from #BFBFBF to #C1C1C1
-- [ ] Change full name input border from #DDD to #C1C1C1
-- [ ] Change phone input border from #DDD to #C1C1C1
-- [ ] Change address input border from #DDD to #C1C1C1
-- [ ] Change district input border from #DDD to #C1C1C1
-- [ ] Change building number input border from #DDD to #C1C1C1
-- [ ] Change apartment input border from #DDD to #C1C1C1
-- [ ] Change card number input border from #DDD to #C1C1C1
-- [ ] Change CVV input border from #DDD to #C1C1C1
-- [ ] Change expiry date input border from #DDD to #C1C1C1
-- [ ] Change map div border from #DDD to #C1C1C1
-- [ ] Change order items border from #DFDFDF to #C1C1C1
-- [ ] Change price summary border from #EEE to #C1C1C1
+# TODO
+
