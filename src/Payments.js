@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
-export default function Addresses() {
+export default function Payments() {
     return (
         <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#FBFBFB' }}>
             {/* Fixed Header Container */}
@@ -385,18 +385,13 @@ export default function Addresses() {
             align-items: center;
             justify-content: flex-start;
           }
-
-          .menu li.active img {
-            left: -6px;
-            top: 10px;
-          }
         `}</style>
 
                 <div className="account-page">
 
-                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>العناوين</h1>
+                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>المدفوعات</h1>
                     <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-30px', marginBottom: '40px' }}>
-                        إدارة عناوينك الشحنية والتسليم
+                        إدارة طرق الدفع الخاصة بك
                     </p>
 
                     <div className="account-layout">
@@ -429,8 +424,8 @@ export default function Addresses() {
                                     <Link to="/account" style={{ textDecoration: 'none', color: 'inherit' }}><li> حسابي <img src="/image/k11.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '2px', left: '-40px', borderWidth: '2px' }} /></li></Link>
                                     <Link to="/orders" style={{ textDecoration: 'none', color: 'inherit' }}><li> الطلبات <img src="/image/k1.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-37px', borderWidth: '2px' }} /></li></Link>
                                     <Link to="/resorts" style={{ textDecoration: 'none', color: 'inherit' }}><li> المرتجعات <img src="/image/k2.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-12px', borderWidth: '2px' }} /></li></Link>
-                                    <li className="active"> العناوين <img src="/image/k3.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-36px', borderWidth: '2px' }} /></li>
-                                    <li> المدفوعات <img src="/image/k4.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-10px', borderWidth: '2px' }} /></li>
+                                    <Link to="/addresses" style={{ textDecoration: 'none', color: 'inherit' }}><li> العناوين <img src="/image/k3.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-36px', borderWidth: '2px' }} /></li></Link>
+                                    <li className="active"> المدفوعات <img src="/image/k4.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-10px', borderWidth: '2px' }} /></li>
                                 </ul>
                             </div>
                             <br></br>
@@ -440,65 +435,53 @@ export default function Addresses() {
                         {/* ===== LEFT ===== */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginLeft: '-200px' }}>
                             <div className="card">
-                                <h3 style={{ marginTop: ' -10px' }}>العناوين الحالية</h3>
+                                <h3 style={{ marginTop: ' -10px' }}>طرق الدفع الحالية</h3>
                                 <div className="form-grid">
                                     <div>
-                                        <label>الاسم الكامل</label>
+                                        <label>نوع البطاقة</label>
+                                        <select><option>فيزا</option></select>
+                                    </div>
+                                    <div>
+                                        <label>رقم البطاقة</label>
+                                        <input defaultValue="**** **** **** 1234" />
+                                    </div>
+                                    <div>
+                                        <label>تاريخ الانتهاء</label>
+                                        <input defaultValue="12/25" />
+                                    </div>
+                                    <div>
+                                        <label>اسم حامل البطاقة</label>
                                         <input defaultValue="سيف طارق" />
                                     </div>
-                                    <div>
-                                        <label>رقم الهاتف</label>
-                                        <input defaultValue="0501234567" />
-                                    </div>
-                                    <div>
-                                        <label>المدينة</label>
-                                        <select><option>الرياض</option></select>
-                                    </div>
-                                    <div>
-                                        <label>الحي</label>
-                                        <input defaultValue="الملز" />
-                                    </div>
-                                    <div>
-                                        <label>الشارع</label>
-                                        <input defaultValue="شارع الملك فهد" />
-                                    </div>
-                                    <div>
-                                        <label>رقم المبنى</label>
-                                        <input defaultValue="123" />
-                                    </div>
                                 </div>
-                                <button className="save-btn">تحديث العنوان</button>
+                                <button className="save-btn">تحديث البطاقة</button>
                             </div>
 
                             <div className="card">
-                                <h3 style={{ marginTop: ' -10px' }}>إضافة عنوان جديد</h3>
+                                <h3 style={{ marginTop: ' -10px' }}>إضافة طريقة دفع جديدة</h3>
                                 <div className="form-grid">
                                     <div>
-                                        <label>الاسم الكامل</label>
-                                        <input placeholder="أدخل الاسم الكامل" />
+                                        <label>نوع البطاقة</label>
+                                        <select><option>اختر نوع البطاقة</option></select>
                                     </div>
                                     <div>
-                                        <label>رقم الهاتف</label>
-                                        <input placeholder="أدخل رقم الهاتف" />
+                                        <label>رقم البطاقة</label>
+                                        <input placeholder="أدخل رقم البطاقة" />
                                     </div>
                                     <div>
-                                        <label>المدينة</label>
-                                        <select><option>اختر المدينة</option></select>
+                                        <label>تاريخ الانتهاء</label>
+                                        <input placeholder="MM/YY" />
                                     </div>
                                     <div>
-                                        <label>الحي</label>
-                                        <input placeholder="أدخل الحي" />
+                                        <label>رمز الأمان (CVV)</label>
+                                        <input placeholder="أدخل CVV" />
                                     </div>
                                     <div>
-                                        <label>الشارع</label>
-                                        <input placeholder="أدخل الشارع" />
-                                    </div>
-                                    <div>
-                                        <label>رقم المبنى</label>
-                                        <input placeholder="أدخل رقم المبنى" />
+                                        <label>اسم حامل البطاقة</label>
+                                        <input placeholder="أدخل الاسم" />
                                     </div>
                                 </div>
-                                <button className="save-btn">إضافة العنوان</button>
+                                <button className="save-btn">إضافة البطاقة</button>
                             </div>
                         </div>
 

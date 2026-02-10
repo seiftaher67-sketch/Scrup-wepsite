@@ -388,9 +388,9 @@ export default function Resorts() {
 
                 <div className="account-page">
 
-                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>المرتجعات</h1>
+                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>المرتجعات والاستردادات</h1>
                     <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-30px', marginBottom: '40px' }}>
-                        عرض وإدارة مرتجعاتك وحجوزاتك
+                          إدارة طلبات الإرجاع وتتبع حالة الاسترداد
                     </p>
 
                     <div className="account-layout">
@@ -420,11 +420,11 @@ export default function Resorts() {
                             <br></br>
                             <div className="menu-card">
                                 <ul className="menu">
-                                    <Link to="/account" style={{ textDecoration: 'none', color: 'inherit' }}><li> حسابي <img src="/image/k11.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '2px', left: '-40px', borderWidth: '2px' }} /></li></Link>
-                                    <Link to="/orders" style={{ textDecoration: 'none', color: 'inherit' }}><li> الطلبات <img src="/image/k1.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-37px', borderWidth: '2px' }} /></li></Link>
-                                    <li className="active"> المرتجعات <img src="/image/k2.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-12px', borderWidth: '2px' }} /></li>
-                                    <Link to="/addresses" style={{ textDecoration: 'none', color: 'inherit' }}><li> العناوين <img src="/image/k3.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-36px', borderWidth: '2px' }} /></li></Link>
-                                    <Link to="/payments" style={{ textDecoration: 'none', color: 'inherit' }}><li> المدفوعات <img src="/image/k4.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-10px', borderWidth: '2px' }} /></li></Link>
+                                    <Link to="/account" style={{ textDecoration: 'none', color: 'inherit' }}><li> حسابي <img src="/image/k11.png" alt="Account Icon" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '2px', left: '-40px', borderWidth: '2px' }} /></li></Link>
+                                    <Link to="/orders" style={{ textDecoration: 'none', color: 'inherit' }}><li> الطلبات <img src="/image/k1.png" alt="Orders Icon" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-37px', borderWidth: '2px' }} /></li></Link>
+                                    <li className="active"> المرتجعات <img src="/image/k2.png" alt="Resorts Icon" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-12px', borderWidth: '2px' }} /></li>
+                                    <Link to="/addresses" style={{ textDecoration: 'none', color: 'inherit' }}><li> العناوين <img src="/image/k3.png" alt="Addresses Icon" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-36px', borderWidth: '2px' }} /></li></Link>
+                                    <Link to="/payments" style={{ textDecoration: 'none', color: 'inherit' }}><li> المدفوعات <img src="/image/k4.png" alt="Payments Icon" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-10px', borderWidth: '2px' }} /></li></Link>
                                 </ul>
                             </div>
                             <br></br>

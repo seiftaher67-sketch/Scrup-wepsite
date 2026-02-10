@@ -389,9 +389,9 @@ export default function Orders() {
 
                 <div className="account-page">
 
-                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>الطلبات</h1>
+                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>طلباتي</h1>
                     <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-30px', marginBottom: '40px' }}>
-                        عرض وتتبع طلباتك السابقة والحالية
+                        تتبع، إرجاع، أو شراء الأشياء مرة أخرى
                     </p>
 
                     <div className="account-layout">

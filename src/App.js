@@ -14,6 +14,8 @@ import ProductDetail from './ProductDetail';
 import Account from './Account';
 import Orders from './Orders';
 import Resorts from './Resorts';
+import Addresses from './Addresses';
+import Payments from './Payments';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/resorts" element={<Resorts />} />
+          <Route path="/addresses" element={<Addresses />} />
+          <Route path="/payments" element={<Payments />} />
         </Routes>
         <Footer />
       </div>

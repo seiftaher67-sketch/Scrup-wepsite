@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Account() {
   const [activeTab, setActiveTab] = useState('account');
+  const navigate = useNavigate();
   return (
     <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#FBFBFB' }}>
       {/* Fixed Header Container */}
@@ -382,9 +383,10 @@ export default function Account() {
             margin-left: -20px;
             padding-left: 30px;
             text-align: right;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
+          }
+
+          .menu li.active img {
+            left: -7px;
           }
         `}</style>
 
@@ -422,11 +424,11 @@ export default function Account() {
               <br></br>
               <div className="menu-card">
                 <ul className="menu">
-                  <li className={activeTab === 'account' ? 'active' : ''} onClick={() => setActiveTab('account')}>حسابي <img src="/image/k11.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '2px', left: '-40px', borderWidth: '2px' }} /></li>
-                  <Link to="/orders" style={{ textDecoration: 'none', color: 'inherit' }}><li> الطلبات <img src="/image/k1.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-37px', borderWidth: '2px' }} /></li></Link>
+                  <li className={activeTab === 'account' ? 'active' : ''} onClick={() => setActiveTab('account')}>حسابي <img src="/image/k11.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-40px', borderWidth: '2px' }} /></li>
+                  <li className={activeTab === 'orders' ? 'active' : ''} onClick={() => setActiveTab('orders')}> الطلبات <img src="/image/k1.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-37px', borderWidth: '2px' }} /></li>
                   <Link to="/resorts" style={{ textDecoration: 'none', color: 'inherit' }}><li> المرتجعات <img src="/image/k2.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-12px', borderWidth: '2px' }} /></li></Link>
-                  <li className={activeTab === 'addresses' ? 'active' : ''} onClick={() => setActiveTab('addresses')}> العناوين <img src="/image/k3.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-36px', borderWidth: '2px' }} /></li>
-                  <li className={activeTab === 'payments' ? 'active' : ''} onClick={() => setActiveTab('payments')}> المدفوعات <img src="/image/k4.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-10px', borderWidth: '2px' }} /></li>
+                  <Link to="/addresses" style={{ textDecoration: 'none', color: 'inherit' }}><li> العناوين <img src="/image/k3.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '8px', left: '-36px', borderWidth: '2px' }} /></li></Link>
+                  <li onClick={() => navigate('/payments')}> المدفوعات <img src="/image/k4.png" style={{ width: '29.114788055419922px', height: '33.33333206176758px', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '-10px', borderWidth: '2px' }} /></li>
                 </ul>
               </div>
               <br></br>
