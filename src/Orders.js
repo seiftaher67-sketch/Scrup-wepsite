@@ -457,28 +457,6 @@ export default function Orders() {
                                 <button className="save-btn">عرض التفاصيل</button>
                             </div>
 
-                            <div className="card">
-                                <h3 style={{ marginTop: ' -10px' }}>تاريخ الطلبات</h3>
-                                <div className="form-grid">
-                                    <div>
-                                        <label>آخر طلب</label>
-                                        <input defaultValue="#12344" />
-                                    </div>
-                                    <div>
-                                        <label>تاريخ الاستلام</label>
-                                        <input defaultValue="2023-09-15" />
-                                    </div>
-                                    <div>
-                                        <label>الحالة</label>
-                                        <select><option>مكتمل</option></select>
-                                    </div>
-                                    <div>
-                                        <label>المبلغ</label>
-                                        <input defaultValue="300 ريال" />
-                                    </div>
-                                </div>
-                                <button className="save-btn">عرض الطلبات السابقة</button>
-                            </div>
                         </div>
 
                     </div>

@@ -2,8 +2,16 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Account() {
-  const [activeTab, setActiveTab] = useState('account');
+  const [activeTab, setActiveTab] = useState('orders');
   const navigate = useNavigate();
+
+  const titles = {
+    account: { title: 'حسابي', subtitle: 'عرض وتحديث معلومات حسابك وبيانات الاتصال' },
+    orders: { title: 'طلباتي', subtitle: 'تتبع، إرجاع، أو شراء الأشياء مرة أخرى' },
+    payments: { title: 'المدفوعات', subtitle: 'إدارة طرق الدفع والمعاملات' },
+  };
+
+  const currentTitle = titles[activeTab] || titles.orders;
   return (
     <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#FBFBFB' }}>
       {/* Fixed Header Container */}
@@ -392,9 +400,9 @@ export default function Account() {
 
         <div className="account-page">
 
-          <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>حسابي</h1>
+          <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>{currentTitle.title}</h1>
           <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-30px', marginBottom: '40px' }}>
-            عرض وتحديث معلومات حسابك وبيانات الاتصال
+            {currentTitle.subtitle}
           </p>
 
           <div className="account-layout">
@@ -480,7 +488,7 @@ export default function Account() {
                   </div>
                 </>
               )}
-              {(activeTab === 'orders' || activeTab === 'addresses' || activeTab === 'payments') && (
+              {activeTab === 'orders' && (
                 <>
                   <div className="card">
                     <h3 style={{ marginTop: ' -10px' }}>الطلبات الحالية</h3>
@@ -526,6 +534,108 @@ export default function Account() {
                       </div>
                     </div>
                     <button className="save-btn">عرض الطلبات السابقة</button>
+                  </div>
+                </>
+              )}
+              {activeTab === 'addresses' && (
+                <>
+                  <div className="card">
+                    <h3 style={{ marginTop: ' -10px' }}>العناوين الحالية</h3>
+                    <div className="form-grid">
+                      <div>
+                        <label>العنوان الرئيسي</label>
+                        <input defaultValue="الرياض، السعودية" />
+                      </div>
+                      <div>
+                        <label>المدينة</label>
+                        <input defaultValue="الرياض" />
+                      </div>
+                      <div>
+                        <label>الرمز البريدي</label>
+                        <input defaultValue="12345" />
+                      </div>
+                      <div>
+                        <label>رقم الهاتف</label>
+                        <input defaultValue="+966 50 123 4567" />
+                      </div>
+                    </div>
+                    <button className="save-btn">تحديث العنوان</button>
+                  </div>
+
+                  <div className="card">
+                    <h3 style={{ marginTop: ' -10px' }}>إضافة عنوان جديد</h3>
+                    <div className="form-grid">
+                      <div>
+                        <label>العنوان</label>
+                        <input placeholder="أدخل العنوان" />
+                      </div>
+                      <div>
+                        <label>المدينة</label>
+                        <input placeholder="أدخل المدينة" />
+                      </div>
+                      <div>
+                        <label>الرمز البريدي</label>
+                        <input placeholder="أدخل الرمز البريدي" />
+                      </div>
+                      <div>
+                        <label>رقم الهاتف</label>
+                        <input placeholder="أدخل رقم الهاتف" />
+                      </div>
+                    </div>
+                    <button className="save-btn">إضافة العنوان</button>
+                  </div>
+                </>
+              )}
+              {activeTab === 'payments' && (
+                <>
+                  <div className="card">
+                    <h3 style={{ marginTop: ' -10px' }}>طرق الدفع الحالية</h3>
+                    <div className="form-grid">
+                      <div>
+                        <label>نوع البطاقة</label>
+                        <select><option>فيزا</option></select>
+                      </div>
+                      <div>
+                        <label>رقم البطاقة</label>
+                        <input defaultValue="**** **** **** 1234" />
+                      </div>
+                      <div>
+                        <label>تاريخ الانتهاء</label>
+                        <input defaultValue="12/25" />
+                      </div>
+                      <div>
+                        <label>اسم حامل البطاقة</label>
+                        <input defaultValue="سيف طارق" />
+                      </div>
+                    </div>
+                    <button className="save-btn">تحديث البطاقة</button>
+                  </div>
+
+                  <div className="card">
+                    <h3 style={{ marginTop: ' -10px' }}>إضافة طريقة دفع جديدة</h3>
+                    <div className="form-grid">
+                      <div>
+                        <label>نوع البطاقة</label>
+                        <select><option>اختر نوع البطاقة</option></select>
+                      </div>
+                      <div>
+                        <label>رقم البطاقة</label>
+                        <input placeholder="أدخل رقم البطاقة" />
+                      </div>
+                      <div>
+                        <label>تاريخ الانتهاء</label>
+                        <input placeholder="MM/YY" />
+                      </div>
+                      <div>
+                        <label>رمز الأمان (CVV)</label>
+                        <input placeholder="أدخل CVV" />
+                      </div>
+                      <div>
+                        <label>اسم حامل البطاقة</label>
+                        <input placeholder="أدخل الاسم" />
+                      </div>
+                    </div>
+                    <button className="save-btn">إضافة البطاقة</button>
                   </div>
                 </>
               )}

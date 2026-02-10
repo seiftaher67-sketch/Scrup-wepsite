@@ -389,9 +389,9 @@ export default function Payments() {
 
                 <div className="account-page">
 
-                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>المدفوعات</h1>
+                    <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>طرق الدفع</h1>
                     <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-30px', marginBottom: '40px' }}>
-                        إدارة طرق الدفع الخاصة بك
+                       إدارة خيارات الدفع الخاصة بك بأمان
                     </p>
 
                     <div className="account-layout">
