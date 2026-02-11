@@ -30,10 +30,18 @@ export default function Orders() {
             {[1, 2].map((_, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 flex items-center justify-between shadow-sm"
+                className="bg-white rounded-2xl p-4 flex items-center shadow-sm"
               >
+               {/* Icon */}
+               <div className="w-32 h-32 border border-gray-300 bg-gray-300 rounded-xl flex items-center justify-center">
+                  <img
+                    src="/image/ord.png"
+                    alt="order"
+                    className="w-30 h-30"
+                  />
+                </div>
                 {/* Order Info */}
-                <div className="space-y-2">
+                <div className="space-y-2 mr-4">
                   <p className="text-sm text-gray-500">
                     ORD-54874854{index}12652596
                   </p>
@@ -46,22 +54,16 @@ export default function Orders() {
                   <p className="text-sm font-semibold text-gray-700">
                     المبلغ الكلي: <span className="font-bold">250 جنيه</span>
                   </p>
-
-                  <button
-                    className="mt-2 px-6 py-2 border border-[#022B3A] rounded-lg
-                    text-sm text-[#022B3A] hover:bg-[#022B3A] hover:text-white transition"
-                  >
-                    تتبع الطلب
-                  </button>
                 </div>
 
-                {/* Icon */}
-                <div className="w-12 h-12 border border-gray-300 rounded-xl flex items-center justify-center">
-                  <img
-                    src="/image/bag.png"
-                    alt="order"
-                    className="w-6 h-6"
-                  />
+                
+                <div className="flex gap-3 mr-40 mt-20">
+                <button
+                  className="px-16 py-2  border border-[#022B3A] rounded-lg
+                  text-sm text-[#022B3A] hover:bg-[#022B3A] hover:text-white transition"
+                >
+                  تتبع الطلب
+                </button>
                 </div>
               </div>
             ))}

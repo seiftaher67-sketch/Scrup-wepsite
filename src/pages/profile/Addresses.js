@@ -5,8 +5,9 @@ import ProfileSidebar from "../../components/ProfileSidebar";
 export default function Addresses() {
   return (
     <div className="w-full min-h-screen bg-[#F6F6F6]" dir="rtl">
+     <div dir="ltr"  >
       <Header />
-
+      </div>
       <div className="pt-[130px]">
         <div className="max-w-[1280px] mx-auto px-4 py-10">
           {/* Title */}
@@ -24,10 +25,9 @@ export default function Addresses() {
             {/* Content */}
             <div className="bg-white rounded-2xl p-6 shadow-sm max-w-[640px]">
               {/* Address Input */}
-              <input
-                placeholder="ادخل العنوان"
-                className="w-full border border-gray-200 rounded-lg p-3 mb-4 outline-none text-right"
-              />
+              <label
+                className="w-full  rounded-lg p-3 mb-14 outline-none text-right"
+              >ادخل العنوان</label>
 
               {/* Sub Input */}
               <input
