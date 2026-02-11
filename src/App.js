@@ -1,19 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Men from './Men';
-import Women from './Women';
-import MedicalTools from './MedicalTools';
-import Login from './Login';
-import VerifyCode from './VerifyCode';
-import Footer from './Footer';
-import WashingGuide from './WashingGuide';
-import ReturnPolicy from './ReturnPolicy';
-import Purchase from './Purchase';
-import ProductDetail from './ProductDetail';
-import Account from './Account';
-import Orders from './Orders';
-import Resorts from './Resorts';
+import Home from './pages/Home';
+import Men from './pages/Men';
+import Women from './pages/Women';
+import MedicalTools from './pages/MedicalTools';
+import Login from './pages/Login';
+import VerifyCode from './pages/VerifyCode';
+import Footer from './components/Footer';
+import WashingGuide from './pages/WashingGuide';
+import ReturnPolicy from './pages/ReturnPolicy';
+import Purchase from './pages/Purchase';
+import ProductDetail from './pages/ProductDetail';
+import Account from './pages/profile/Account';
+import Orders from './pages/profile/Orders';
+import Resorts from './pages/profile/Resorts';
+import Addresses from './pages/profile/Addresses';
+import Payments from './pages/profile/Payments';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/resorts" element={<Resorts />} />
+          <Route path="/addresses" element={<Addresses />} />
+          <Route path="/payments" element={<Payments />} />
         </Routes>
         <Footer />
       </div>

@@ -1346,6 +1346,28 @@ function Index() {
           </div>
         </div>
       )}
+
+      {/* New Section with Tailwind Classes to Test Setup */}
+      <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">اكتشف عالم السكرابات الطبية</h2>
+          <p className="text-xl mb-8">مع مجموعة متنوعة من التصاميم والألوان التي تناسب احتياجاتك اليومية</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white bg-opacity-20 p-6 rounded-lg">
+              <h3 className="text-2xl font-semibold mb-2">جودة عالية</h3>
+              <p>خامات مريحة ومتينة للاستخدام اليومي</p>
+            </div>
+            <div className="bg-white bg-opacity-20 p-6 rounded-lg">
+              <h3 className="text-2xl font-semibold mb-2">تصاميم عصرية</h3>
+              <p>أسلوب أنيق يجمع بين الراحة والأناقة</p>
+            </div>
+            <div className="bg-white bg-opacity-20 p-6 rounded-lg">
+              <h3 className="text-2xl font-semibold mb-2">أسعار مناسبة</h3>
+              <p>عروض خاصة وعروض ترويجية مستمرة</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
