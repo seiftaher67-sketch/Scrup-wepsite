@@ -250,6 +250,7 @@ function Index() {
           textAlign: 'right',
           color: '#FFFFFF',
           marginRight: '20px',
+          paddingTop: '20px',
           opacity: isTitle1Visible ? 1 : 0,
           transform: isTitle1Visible ? 'translateY(0)' : 'translateY(20px)',
           transition: 'opacity 1s ease, transform 1s ease'
@@ -263,7 +264,7 @@ function Index() {
           textAlign: 'right',
           color: '#FFFFFF',
           marginRight: '20px',
-          paddingTop: '0px',
+          paddingTop: '55px',
           opacity: isTitle2Visible ? 1 : 0,
           transform: isTitle2Visible ? 'translateY(0)' : 'translateY(20px)',
           transition: 'opacity 1s ease, transform 1s ease'
@@ -277,7 +278,7 @@ function Index() {
           textAlign: 'right',
           color: '#FFFFFF',
           marginRight: '20px',
-          paddingTop: '40px',
+          paddingTop: '90px',
           opacity: isTitle3Visible ? 1 : 0,
           transform: isTitle3Visible ? 'translateY(0)' : 'translateY(20px)',
           transition: 'opacity 1s ease, transform 1s ease'
@@ -294,7 +295,7 @@ function Index() {
       }}>
         <p style={{ fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '250px', marginBottom: '0px', wordSpacing: '1px' }}>سكربات طبية بجودة عالية وتصاميم عملية </p>
         <p style={{ fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '0px', wordSpacing: '5px' }}>تناسب ساعات العمل الطويل.راحة، متانة  </p>
-        <p style={{ fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '-24px', wordSpacing: '5px' }}>ومقاسات تناسب الجميع</p>
+        <p style={{ fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '-4px', wordSpacing: '5px' }}>ومقاسات تناسب الجميع</p>
       </div>
       <Link to="/women" style={{ textDecoration: 'none' }}>
         <button
@@ -1347,27 +1348,7 @@ function Index() {
         </div>
       )}
 
-      {/* New Section with Tailwind Classes to Test Setup */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">اكتشف عالم السكرابات الطبية</h2>
-          <p className="text-xl mb-8">مع مجموعة متنوعة من التصاميم والألوان التي تناسب احتياجاتك اليومية</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white bg-opacity-20 p-6 rounded-lg">
-              <h3 className="text-2xl font-semibold mb-2">جودة عالية</h3>
-              <p>خامات مريحة ومتينة للاستخدام اليومي</p>
-            </div>
-            <div className="bg-white bg-opacity-20 p-6 rounded-lg">
-              <h3 className="text-2xl font-semibold mb-2">تصاميم عصرية</h3>
-              <p>أسلوب أنيق يجمع بين الراحة والأناقة</p>
-            </div>
-            <div className="bg-white bg-opacity-20 p-6 rounded-lg">
-              <h3 className="text-2xl font-semibold mb-2">أسعار مناسبة</h3>
-              <p>عروض خاصة وعروض ترويجية مستمرة</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
   );
 }
