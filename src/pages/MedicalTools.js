@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Login from './Login';
-import SortFilter from './SortFilter';
+import SortFilter from '../components/SortFilter';
 
 function MedicalTools() {
   const cardsPerView = 3;

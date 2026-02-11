@@ -1,5 +1,10 @@
-# TODO: Add Resorts Page
+# TODO: Extract Header Component and Convert to Tailwind
 
-- [x] Create Scrup-wepsite/src/Resorts.js with header from Account.js and empty content
-- [x] Update Scrup-wepsite/src/App.js to import Resorts and add /resorts route
-- [x] Update Scrup-wepsite/src/Account.js to wrap "المرتجعات" in Link to="/resorts"
+## Tasks
+- [ ] Create a new Header component in src/components/Header.js with Tailwind styles
+- [ ] Replace the duplicated header code in src/pages/profile/Orders.js with <Header />
+- [ ] Replace the duplicated header code in src/pages/profile/Account.js with <Header />
+- [ ] Replace the duplicated header code in src/pages/profile/Payments.js with <Header />
+- [ ] Replace the duplicated header code in src/pages/profile/Addresses.js with <Header />
+- [ ] Check and update other pages (e.g., Home.js, Men.js, Women.js) to use the Header component if needed
+- [ ] Test the design preservation across pages
