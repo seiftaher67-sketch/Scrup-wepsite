@@ -11,12 +11,11 @@ export default function Addresses() {
       <div className="pt-[130px]">
         <div className="max-w-[1280px] mx-auto px-4 py-10">
           {/* Title */}
-          <h1 className="text-[48px] font-bold text-[#022B3A] mb-2">
-            المرتجعات والاستردادات
-          </h1>
-          <p className="text-[22px] text-gray-600 mb-10">
-            إدارة طلبات الإرجاع وتتبع حالة الاسترداد
+           <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>العناوين</h1>
+          <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
+            عرض وتحديث بيانات موقعك الجغرافي  
           </p>
+
 
           <div className="grid grid-cols-[420px_1fr] gap-10 items-start">
             {/* Sidebar */}

@@ -1,10 +1,6 @@
-# TODO: Extract Header Component and Convert to Tailwind
+# TODO for Adding Search Button to Account Page
 
-## Tasks
-- [ ] Create a new Header component in src/components/Header.js with Tailwind styles
-- [ ] Replace the duplicated header code in src/pages/profile/Orders.js with <Header />
-- [ ] Replace the duplicated header code in src/pages/profile/Account.js with <Header />
-- [ ] Replace the duplicated header code in src/pages/profile/Payments.js with <Header />
-- [ ] Replace the duplicated header code in src/pages/profile/Addresses.js with <Header />
-- [ ] Check and update other pages (e.g., Home.js, Men.js, Women.js) to use the Header component if needed
-- [ ] Test the design preservation across pages
+- [x] Edit Header.js to add 'showSearch' prop and conditionally render search input
+- [x] Edit Account.js to pass showSearch={false} to Header component
+- [x] Add search input with same styling to Account.js page content
+- [x] Test the changes to ensure search input appears in account page and is hidden in header

@@ -250,10 +250,11 @@ export default function Account() {
 
         <div className="account-page">
 
-          <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px' }}>حسابي</h1>
+          <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>حسابي</h1>
           <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
             عرض وتحديث معلومات حسابك وبيانات الاتصال
           </p>
+
 
           <div className="account-layout">
 

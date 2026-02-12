@@ -12,12 +12,10 @@ export default function Orders() {
             <div className="w-full min-h-screen bg-[#FBFBFB] pt-[130px] font-cairo" dir="rtl">
       <div className="max-w-[1280px] mx-auto px-4 py-10">
         {/* Page Title */}
-        <h1 className="text-[48px] font-bold text-[#022B3A] mb-2">
-          طلباتي
-        </h1>
-        <p className="text-[22px] text-gray-600 mb-10">
-          تتبع أو إعادة شراء الأشياء مرة أخرى
-        </p>
+      <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>طلباتي</h1>
+          <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
+تتبع، إرجاع، أو شراء الأشياء مرة أخرى
+          </p>
 
         {/* Layout */}
         <div className="grid grid-cols-[460px_1fr] gap-10 items-start">

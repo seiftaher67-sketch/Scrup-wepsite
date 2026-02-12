@@ -22,34 +22,32 @@ export default function Payments() {
   return (
     <div className="w-full min-h-screen bg-[#F6F6F6]" dir="rtl">
       <div dir="ltr"  >
-      <Header />
+        <Header />
       </div>
       <div className="pt-[130px]"  >
         <div className="max-w-[1280px] mx-auto px-4 py-10">
-          {/* Title */}
-          <h1 className="text-[48px] font-bold text-[#022B3A] mb-2">
-            طرق الدفع
-          </h1>
-          <p className="text-[24px] text-gray-600 mb-10">
-            إدارة خيارات الدفع الخاصة بك بأمان
+        
+          <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>طرق الدفع</h1>
+          <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
+إدارة خيارات الدفع الخاصة بك بأمان
           </p>
+
 
           <div className="grid grid-cols-[420px_1fr] gap-10 items-start">
             {/* Sidebar */}
             <ProfileSidebar activePage="payments" />
 
             {/* Content */}
-            <div className="space-y-10 mr-30" >
+            <div className="space-y-10 mx-30 -translate-x-[30px]" >
               {/* Cards */}
               <div className="flex gap-6" >
                 {cards.map((card, index) => (
                   <div key={index} className="flex flex-col gap-4">
                     <div
                       className={`w-[260px] h-[160px] rounded-2xl p-5 text-white flex flex-col justify-between
-                        ${
-                          card.type === "visa"
-                            ? "bg-gradient-to-br from-blue-500 to-blue-700"
-                            : "bg-gradient-to-br from-orange-500 to-red-600"
+                        ${card.type === "visa"
+                          ? "bg-gradient-to-br from-blue-500 to-blue-700"
+                          : "bg-gradient-to-br from-orange-500 to-red-600"
                         }`} dir="ltr"
                     >
                       <div className="flex justify-between items-start">
@@ -74,7 +72,7 @@ export default function Payments() {
                         </div>
                       </div>
                     </div>
-                    <button className="w-[160px] bg-white text-red-500 py-2 px-4 rounded-lg border border-gray-300 flex items-center justify-center gap-2">
+                    <button className="w-[110px] bg-white text-red-500 py-2 px-4 rounded-lg border border-gray-300 flex items-center justify-center gap-2">
                       <Trash2 className="w-4 h-4" />
                       حذف
                     </button>
@@ -83,7 +81,7 @@ export default function Payments() {
               </div>
 
               {/* Add Card */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm max-w-[560px]">
+              <div className="bg-white rounded-2xl p-6 shadow-sm max-w-[760px]">
                 <h3 className="text-lg font-bold text-gray-800 mb-4">
                   إضافة كارد اخر
                 </h3>
