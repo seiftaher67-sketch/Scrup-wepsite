@@ -46,31 +46,31 @@ const ProfileSidebar = ({ activePage }) => {
         <ul className="space-y-1">
           <MenuItem
             to="/account"
-            label={<strong style={{ color: '#4A5565' }}>حسابي</strong>}
+            label={<span style={{ color: '#4A5565', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'none', lineHeight: '24px', letterSpacing: '0px', textAlign: 'center' }}>حسابي</span>}
             icon="/image/k11.png"
             active={activePage === "account"}
           />
           <MenuItem
             to="/orders"
-            label={<strong style={{ color: '#4A5565' }}>الطلبات</strong>}
+            label={<span style={{ color: '#4A5565', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'none', lineHeight: '24px', letterSpacing: '0px', textAlign: 'center' }}>الطلبات</span>}
             icon="/image/k1.png"
             active={activePage === "orders"}
           />
           <MenuItem
             to="/resorts"
-            label={<strong style={{ color: '#4A5565' }}>المرتجعات</strong>}
+            label={<span style={{ color: '#4A5565', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'none', lineHeight: '24px', letterSpacing: '0px', textAlign: 'center' }}>المرتجعات</span>}
             icon="/image/k2.png"
             active={activePage === "resorts"}
           />
           <MenuItem
             to="/addresses"
-            label={<strong style={{ color: '#4A5565' }}>العناوين</strong>}
+            label={<span style={{ color: '#4A5565', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'none', lineHeight: '24px', letterSpacing: '0px', textAlign: 'center' }}>العناوين</span>}
             icon="/image/k3.png"
             active={activePage === "addresses"}
           />
           <MenuItem
             to="/payments"
-            label={<strong style={{ color: '#4A5565' }}>المدفوعات</strong>}
+            label={<span style={{ color: '#4A5565', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'none', lineHeight: '24px', letterSpacing: '0px', textAlign: 'center' }}>المدفوعات</span>}
             icon="/image/k4.png"
             active={activePage === "payments"}
           />
