@@ -24,7 +24,7 @@ const ProfileSidebar = ({ activePage }) => {
             س ط
           </div>
           <div>
-            <p className="text-lg font-semibold text-gray-800">مرحبًا، سيف</p>
+            <p className="text-lg font-semibold text-gray-800"><strong>مرحبًا</strong>، <strong>سيف</strong></p>
             <p className="text-sm text-gray-400">seif@example.com</p>
           </div>
         </div>
@@ -33,10 +33,10 @@ const ProfileSidebar = ({ activePage }) => {
         <div className="mt-6 space-y-2">
           <div className="flex justify-between text-sm text-gray-600">
             <span>اكتمال الملف الشخصي</span>
-            <span className="font-medium">80%</span>
+            <span className="font-medium"><strong>80%</strong></span>
           </div>
           <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div className="h-full w-[80%] bg-teal-700 rounded-full" />
+            <div className="h-full w-[80%]" style={{ backgroundColor: 'rgba(31, 122, 140, 0.52)', borderRadius: '20px' }} />
           </div>
         </div>
       </div>
@@ -46,31 +46,31 @@ const ProfileSidebar = ({ activePage }) => {
         <ul className="space-y-1">
           <MenuItem
             to="/account"
-            label="حسابي"
+            label={<strong style={{ color: '#4A5565' }}>حسابي</strong>}
             icon="/image/k11.png"
             active={activePage === "account"}
           />
           <MenuItem
             to="/orders"
-            label="الطلبات"
+            label={<strong style={{ color: '#4A5565' }}>الطلبات</strong>}
             icon="/image/k1.png"
             active={activePage === "orders"}
           />
           <MenuItem
             to="/resorts"
-            label="المرتجعات"
+            label={<strong style={{ color: '#4A5565' }}>المرتجعات</strong>}
             icon="/image/k2.png"
             active={activePage === "resorts"}
           />
           <MenuItem
             to="/addresses"
-            label="العناوين"
+            label={<strong style={{ color: '#4A5565' }}>العناوين</strong>}
             icon="/image/k3.png"
             active={activePage === "addresses"}
           />
           <MenuItem
             to="/payments"
-            label="المدفوعات"
+            label={<strong style={{ color: '#4A5565' }}>المدفوعات</strong>}
             icon="/image/k4.png"
             active={activePage === "payments"}
           />

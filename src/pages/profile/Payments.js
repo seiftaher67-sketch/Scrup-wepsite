@@ -26,10 +26,10 @@ export default function Payments() {
       </div>
       <div className="pt-[130px]"  >
         <div className="max-w-[1280px] mx-auto px-4 py-10">
-        
+
           <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>طرق الدفع</h1>
           <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
-إدارة خيارات الدفع الخاصة بك بأمان
+            إدارة خيارات الدفع الخاصة بك بأمان
           </p>
 
 
@@ -40,11 +40,11 @@ export default function Payments() {
             {/* Content */}
             <div className="space-y-10 mx-30 -translate-x-[30px]" >
               {/* Cards */}
-              <div className="flex gap-6" >
+              <div className="flex gap-6 max-w-[760px]" >
                 {cards.map((card, index) => (
-                  <div key={index} className="flex flex-col gap-4">
+                  <div key={index} className="flex flex-col gap-4 flex-1">
                     <div
-                      className={`w-[260px] h-[160px] rounded-2xl p-5 text-white flex flex-col justify-between
+                      className={`w-full h-[210px] rounded-2xl p-5 text-white flex flex-col justify-between
                         ${card.type === "visa"
                           ? "bg-gradient-to-br from-blue-500 to-blue-700"
                           : "bg-gradient-to-br from-orange-500 to-red-600"

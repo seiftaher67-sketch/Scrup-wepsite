@@ -6,15 +6,15 @@ export default function Resorts() {
   return (
     <div className="w-full min-h-screen bg-[#FBFBFB]" dir="rtl">
       <div dir="ltr"  >
-      <Header />
+        <Header />
       </div>
       {/* CONTENT */}
       <div className="pt-[130px]">
         <div className="max-w-[1280px] mx-auto px-4 py-10">
           {/* Page Title */}
-           <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>المرتجعات والاستردادات</h1>
+          <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>المرتجعات والاستردادات</h1>
           <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
-تتبع أو إعادة شراء الأشياء مرة أخرى
+            تتبع أو إعادة شراء الأشياء مرة أخرى
 
           </p>
 
@@ -53,16 +53,17 @@ export default function Resorts() {
                       </p>
                     </div>
 
-                   
+
                   </div>
 
                   {/* Left Info */}
                   <div className="space-y-4">
                     {/* Price */}
                     <div className="flex justify-end items-end ">
-                    <p className="text-lg font-bold text-gray-800 ">
-                      250 ج.م
-                    </p>
+                      <div className="flex items-center text-lg font-bold text-gray-800 ">
+                        250
+                        <img src="/image/ry.jpeg" alt="ج.م" className="w-6 h-6 ml-1" />
+                      </div>
                     </div>
                     {/* Actions */}
                     <div className="flex gap-3">
@@ -83,7 +84,7 @@ export default function Resorts() {
                     </div>
                   </div>
 
-                  
+
                 </div>
               ))}
             </div>

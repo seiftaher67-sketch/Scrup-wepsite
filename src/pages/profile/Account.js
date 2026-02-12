@@ -266,7 +266,7 @@ export default function Account() {
               {activeTab === 'account' && (
                 <>
                   <div className="card">
-                    <h3 style={{ marginTop: ' -10px' }}>المعلومات الشخصية</h3>
+                    <h3 style={{ marginTop: '-20px', paddingTop: '20px', fontWeight: 'bold', marginBottom: '30px' }}>المعلومات الشخصية</h3>
                     <div className="form-grid">
                       <div>
                         <label>الاسم الأول</label>
@@ -289,7 +289,7 @@ export default function Account() {
                   </div>
 
                   <div className="card">
-                    <h3 style={{ marginTop: ' -10px' }} >معلومات التواصل</h3>
+                    <h3 style={{ marginTop: '-20px', paddingTop: '20px', fontWeight: 'bold', marginBottom: '30px' }}>معلومات التواصل</h3>
                     <div className="form-grid">
                       <div >
                         <label>البريد الإلكتروني</label>
