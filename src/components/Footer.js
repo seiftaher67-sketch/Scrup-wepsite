@@ -29,7 +29,7 @@ const Footer = () => {
         <h2>تساعدك علي التركيز في شغلك</h2>
         <h2>بثقة وراحة طوال اليوم</h2>
 
-        <div id='socal'>
+        <div id='socal' style={{ marginTop: '50px' }}>
           <img src='/image/instagram.png' alt='instagram' />
           <img src='/image/tiktok.png' alt='tiktok' />
           <img src='/image/face.png' alt='face' />
@@ -53,14 +53,13 @@ const Footer = () => {
         <p ><img src='/image/f2.png' alt='f1' id='w1' />  ش الأمير نواف بن عبدالعزيز - مركز مزاين  </p>
         <a href='mailto:atlascompany@gmail.com' > <img src='/image/f3.png' alt='f1' id='w1' />  atlascompany@gmail.com</a>
         <br></br>
-        
+
         <a href='tel:6551235523'> <img src='/image/f4.png' alt='f1' id='w1' />  6551235523 96+</a>
 
       </div>
-      <br></br>
-      <hr style={{ width: '93%' }} />
+      <hr style={{ width: 'calc(100% - 120px)', marginRight: '60px', marginLeft: '60px' }} />
       <div className="footer-bottom">
-        <div className="copyright" style={{ display: 'flex', alignItems: 'center', marginLeft: '60px' }}>ٌ
+        <div className="copyright" style={{ display: 'flex', alignItems: 'center', marginLeft: '70px' }}>ٌ
           <a href="https://atlas-data.sa"><img src='/image/atlas.jpeg' alt='atlas' style={{ width: '30px', height: '30px', borderRadius: '50%', marginRight: '-40px' }}></img></a>2026 <a href="https://atlas-data.sa" style={{ color: 'white', textDecoration: 'none' }}> أطلس البيانات</a>.  جميع الحقوق محفوظة
         </div>
         <div className="footer-images" style={{ paddingLeft: '47px' }}>

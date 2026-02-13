@@ -18,13 +18,17 @@
     margin-top: 60px;
     margin-right: 60px;
     font-family: Cairo;
-    font-weight: 400;
+    font-weight: 500;
     font-style: Regular;
-    font-size: 16px;
+    font-size: 18px;
     leading-trim: none;
     line-height: 23px;
     letter-spacing: 0%;
     text-align: right;
+}
+
+#decfooter h2 {
+    margin-bottom: 12px;
 }
 
 #footerlink {
@@ -33,7 +37,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-     margin-top: 25px;
+    margin-top: 25px;
 
 }
 
@@ -57,16 +61,17 @@
     line-height: 100%;
     letter-spacing: 0%;
     text-align: right;
+    margin-bottom: 12px;
 
 }
 
 #footerconect {
     color: whitesmoke;
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 10%;
     transform: translateY(-50%);
-     margin-top: 25px;
+    margin-top: 25px;
 }
 
 #footerconect h2 {
@@ -89,11 +94,14 @@
     line-height: 100%;
     letter-spacing: 0%;
     text-align: right;
+    margin-bottom: 12px;
 }
 
 #footerconect a {
     color: white;
     text-decoration: none;
+    margin-bottom: 12px;
+    display: inline-block;
 }
 
 #footerconect img {
@@ -109,11 +117,12 @@
 .footer-images {
     display: flex;
     justify-content: flex-end;
-     margin-top: -7px;
+    margin-top: -7px;
+    margin-left: 7px;
 }
 
 .footer-images img {
-    margin-right: 10px;
+    margin-right: 12px;
     margin-top: 15px;
 
 }
@@ -122,7 +131,7 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-     
+
 }
 
 .copyright {
@@ -148,7 +157,7 @@
 }
 
 hr {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 /* Hover effects for images and links in footer */
