@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Purchase() {
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   const [formData, setFormData] = useState(() => {
     const saved = localStorage.getItem('cartFormData');
     return saved ? JSON.parse(saved) : {
@@ -212,9 +216,11 @@ function Purchase() {
         {/* Return to Cart Sentence */}
         <Link to="/product-detail" style={{ textDecoration: 'none' }}>
           <div style={{
+
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
+            justifyContent: 'flex-end',
             fontFamily: 'El Messiri',
             fontWeight: 400,
             fontStyle: 'normal',
@@ -222,12 +228,12 @@ function Purchase() {
             lineHeight: '150%',
             letterSpacing: '0%',
             color: '#0F0F0F',
-            marginBottom: '20px',
-            marginTop: '0',
+            marginBottom: '10px',
+            marginTop: '10',
             cursor: 'pointer'
           }}>
-            <img src="/image/sahmcard11.png" alt="sahmcard11" style={{ width: '50px', height: '50px', marginRight: '-3px' }} />
-            <span>العودة إلى سلة المشتريات</span>
+            <span style={{ marginTop: '-20px' }}>العودة إلى سلة المشتريات</span>
+            <img src="/image/sahmcard11.png" alt="sahmcard11" style={{ width: '50px', height: '50px', marginLeft: '40px', transform: 'scaleX(-1)', marginTop: '-20px', }} />
           </div>
         </Link>
 
@@ -240,7 +246,7 @@ function Purchase() {
           letterSpacing: '0%',
           color: '#0F0F0F',
           marginBottom: '30px',
-          marginTop: '0',
+          marginTop: '-50px',
           textAlign: 'right'
         }}>
           إتمام الشراء
@@ -254,8 +260,9 @@ function Purchase() {
           lineHeight: '100%',
           letterSpacing: '0%',
           color: '#0F0F0F',
-          marginBottom: '20px',
-          marginTop: '0'
+          marginBottom: '40px',
+          marginTop: '0',
+          fontWeight: 'bold'
         }}>
           معلومات التواصل
         </h2>
@@ -265,7 +272,7 @@ function Purchase() {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: '30px',
-          marginBottom: '40px'
+          marginBottom: '10px'
         }}>
           {/* Left: Form */}
           <div>
@@ -464,10 +471,10 @@ function Purchase() {
         {/* Complete Purchase Button */}
         <Link to="/checkout" style={{ textDecoration: 'none' }}>
           <div style={{
-            marginTop: '20px',
+            marginTop: '80px',
             backgroundColor: '#1F7A8C',
             borderRadius: '8px',
-            marginBottom: '24px',
+            marginBottom: '80px',
             color: '#FFF',
             fontWeight: 600,
             fontSize: '32px',
