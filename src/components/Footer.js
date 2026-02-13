@@ -35,12 +35,12 @@ const Footer = () => {
           <img src='/image/face.png' alt='face' />
         </div>   </div>
       <div id='footerlink'>
-        <h2>روابط مهمة</h2>
-        <p onClick={handleHomeClick} style={{ cursor: 'pointer', color: 'inherit', textDecoration: 'none' }}>
+        <h2 style={{marginTop:'35px'}}>روابط مهمة</h2>
+        <p onClick={handleHomeClick} style={{ cursor: 'pointer', color: 'inherit', textDecoration: 'none', marginTop: '18px' }}>
           الرئيسية
         </p>
         <Link to="/washing-guide" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
-          <p style={{ cursor: 'pointer' }}>تعلميات الغسيل و العناية بالاقمشة</p>
+          <p style={{ cursor: 'pointer', lineHeight: '17px', marginTop: '20px', marginBottom: '25px' }}>تعلميات الغسيل و العناية بالاقمشة</p>
         </Link>
         <Link to="/return-policy" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
           <p style={{ cursor: 'pointer' }}>سياسية الاستبدال والاسترجاع</p>

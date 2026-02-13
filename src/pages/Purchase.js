@@ -210,7 +210,7 @@ function Purchase() {
       <div style={{ marginTop: '130px', padding: '40px 50px', direction: 'rtl', backgroundColor: '#FBFBFB', minHeight: 'calc(100vh - 130px)', position: 'relative' }}>
 
         {/* Return to Cart Sentence */}
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/product-detail" style={{ textDecoration: 'none' }}>
           <div style={{
             display: 'flex',
             flexDirection: 'row',
@@ -353,7 +353,7 @@ function Purchase() {
                   display: 'block',
                   marginBottom: '8px'
                 }}>
-                  أدير بايت / الحي
+                  أدخل عنوانك
                 </label>
                 <input
                   type="text"
@@ -366,40 +366,6 @@ function Purchase() {
                     height: '44px',
                     padding: '12px 16px',
                     border: '1px solid #DDD',
-                    borderRadius: '6px',
-                    fontFamily: 'Calibri',
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    textAlign: 'right',
-                    boxSizing: 'border-box',
-                    outline: 'none',
-                    backgroundColor: '#FFF'
-                  }}
-                />
-              </div>
-
-              {/* District */}
-              <div>
-                <label style={{
-                  fontFamily: 'Calibri',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '100%',
-                  color: '#666',
-                  display: 'block',
-                  marginBottom: '8px'
-                }}>
-                  اسم المحافظة
-                </label>
-                <input
-                  type="text"
-                  placeholder="أدخل اسم المحافظة"
-                  dir="rtl"
-                  style={{
-                    width: '100%',
-                    height: '44px',
-                    padding: '12px 16px',
-                    border: '1px solid #C1C1C1',
                     borderRadius: '6px',
                     fontFamily: 'Calibri',
                     fontWeight: 400,
@@ -433,42 +399,6 @@ function Purchase() {
                     width: '100%',
                     height: '44px',
                     padding: '12px 16px',
-                    border: '1px solid #C1C1C1',
-                    borderRadius: '6px',
-                    fontFamily: 'Calibri',
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    textAlign: 'right',
-                    boxSizing: 'border-box',
-                    outline: 'none',
-                    backgroundColor: '#FFF'
-                  }}
-                />
-              </div>
-
-              {/* Apartment Number */}
-              <div>
-                <label style={{
-                  fontFamily: 'Calibri',
-                  fontWeight: 400,
-                  fontSize: '16px',
-                  lineHeight: '100%',
-                  color: '#666',
-                  display: 'block',
-                  marginBottom: '8px'
-                }}>
-                  رقم الشقة / الدور
-                </label>
-                <input
-                  type="text"
-                  placeholder="أدخل رقم الشقة"
-                  value={formData.apartment}
-                  onChange={(e) => setFormData({ ...formData, apartment: e.target.value })}
-                  dir="rtl"
-                  style={{
-                    width: '100%',
-                    height: '44px',
-                    padding: '12px 16px',
                     border: '1px solid #DDD',
                     borderRadius: '6px',
                     fontFamily: 'Calibri',
@@ -483,23 +413,7 @@ function Purchase() {
               </div>
 
               {/* Save Data Checkbox */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                gap: '12px',
-                marginTop: '12px'
-              }}>
-                <label style={{
-                  fontFamily: 'Calibri',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  color: '#666',
-                  cursor: 'pointer'
-                }}>
-                  احفظ معلوماتك للعضوية
-                </label>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
                 <input
                   type="checkbox"
                   checked={formData.saveData}
@@ -510,6 +424,14 @@ function Purchase() {
                     cursor: 'pointer'
                   }}
                 />
+                <span style={{
+                  fontFamily: 'Calibri',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  color: '#666'
+                }}>
+                  حفظ البيانات لاستخدامها لاحقاً
+                </span>
               </div>
             </div>
           </div>
@@ -537,162 +459,10 @@ function Purchase() {
 
 
 
-        {/* Installment Payment Section */}
-        <h2 style={{
-          fontFamily: 'El Messiri',
-          fontWeight: 700,
-          fontSize: '32px',
-          lineHeight: '150%',
-          letterSpacing: '0%',
-          color: '#0F0F0F',
-          marginBottom: '10px',
-          marginTop: '40px',
-          textAlign: 'right'
-        }}>
-          الدفع
-        </h2>
-        <p style={{
-          fontFamily: 'Cairo',
-          fontWeight: 400,
-          fontSize: '24px',
-          lineHeight: '100%',
-          letterSpacing: '0%',
-          textAlign: 'right',
-          color: '#0F0F0F',
-          marginBottom: '20px'
-        }}>
-          أختر طريقة الدفع المناسبة لك
-        </p>
 
-        {/* Payment Methods */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          gap: '20px',
-          marginBottom: '40px',
-          width: '100%'
-        }}>
-          {/* Tamara Button */}
-          <label
-            style={{
-              width: 'calc(50% - 10px)',
-              height: '60px',
-              backgroundColor: '#F5F5F5',
-              border: 'none',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              cursor: 'pointer',
-              outline: 'none',
-              paddingLeft: '1px',
-              position: 'relative'
-            }}
-          >
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="tamara"
-              checked={selectedPaymentMethod === 'tamara'}
-              onChange={(e) => setSelectedPaymentMethod(e.target.value)}
-              style={{
-                position: 'absolute',
-                right: '10px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '20px',
-                height: '20px',
-                cursor: 'pointer'
-              }}
-            />
-            <img src="/image/p2.png" alt="tamara" style={{ height: '50px', width: '140px', marginLeft: '10px', marginRight: 'auto' }} />
-          </label>
-
-
-          {/* Tabby Button */}
-          <label
-            style={{
-              width: 'calc(50% - 10px)',
-              height: '60px',
-              backgroundColor: '#F5F5F5',
-              border: 'none',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              cursor: 'pointer',
-              outline: 'none',
-              paddingLeft: '1px',
-              position: 'relative'
-
-            }}
-          >
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="tabby"
-              checked={selectedPaymentMethod === 'tabby'}
-              onChange={(e) => setSelectedPaymentMethod(e.target.value)}
-              style={{
-                position: 'absolute',
-                right: '10px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '20px',
-                height: '20px',
-                cursor: 'pointer'
-              }}
-            />
-            <img src="/image/p1.png" alt="tabby" style={{ height: '50px', width: '140px', marginLeft: '10px', marginRight: 'auto' }} />
-          </label>
-        </div>
-
-        {/* New Frame for p33 */}
-        <label
-          style={{
-            height: '60px',
-            backgroundColor: 'black',
-            border: 'none',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-            outline: 'none',
-            paddingLeft: '1px',
-            position: 'relative',
-            width: '100%',
-            marginBottom: '40px'
-          }}
-        >
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="p33"
-            checked={selectedPaymentMethod === 'p33'}
-            onChange={(e) => setSelectedPaymentMethod(e.target.value)}
-            style={{
-              position: 'absolute',
-              right: '10px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: '20px',
-              height: '20px',
-              cursor: 'pointer'
-            }}
-          />
-          <img src="/image/p33.png" alt="p33" style={{ height: '50px', width: '140px', marginRight: '580px' }} />
-        </label>
-
-        {/* Separator Line */}
-        <div style={{
-          height: '8px',
-          backgroundColor: '#FFFFFF',
-          margin: '40px 0 0 0',
-          width: '100%',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-          borderRadius: '4px'
-        }}></div>
 
         {/* Complete Purchase Button */}
-        <Link to="/purchase" style={{ textDecoration: 'none' }}>
+        <Link to="/checkout" style={{ textDecoration: 'none' }}>
           <div style={{
             marginTop: '20px',
             backgroundColor: '#1F7A8C',
@@ -710,281 +480,12 @@ function Purchase() {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            إتمام الشراء
+            صفحة الدفع
           </div>
         </Link>
 
-        {/* Additional Inputs */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row-reverse',
-          gap: '20px',
-          marginBottom: '40px',
-          width: '100%'
-        }}>
-          <input
-            type="text"
-            placeholder="CVV"
-            dir="rtl"
-            style={{
-              width: 'calc(50% - 10px)',
-              height: '60px',
-              padding: '12px 16px',
-              border: '1px solid #C1C1C1',
-              borderRadius: '8px',
-              fontFamily: 'Calibri',
-              fontWeight: 400,
-              fontSize: '16px',
-              textAlign: 'right',
-              boxSizing: 'border-box',
-              outline: 'none',
-              backgroundColor: '#FFF'
-            }}
-          />
-          <input
-            type="text"
-            placeholder="موعد انتهاء الصلاحية"
-            dir="rtl"
-            style={{
-              width: 'calc(50% - 10px)',
-              height: '60px',
-              padding: '12px 16px',
-              border: '1px solid #C1C1C1',
-              borderRadius: '8px',
-              fontFamily: 'Calibri',
-              fontWeight: 400,
-              fontSize: '16px',
-              textAlign: 'right',
-              boxSizing: 'border-box',
-              outline: 'none',
-              backgroundColor: '#FFF'
-            }}
-          />
-        </div>
-
-        {/* Order Items Section with Border */}
-        <div style={{
-          backgroundColor: '#FFF',
-          border: '2px solid #FFFFFF',
-          borderRadius: '16px',
-          paddingTop: '32px',
-          paddingRight: '32px',
-          paddingLeft: '32px',
-          paddingBottom: '20px',
-          marginBottom: '40px',
-          opacity: 1,
-          transform: 'rotate(0deg)',
-          gap: '24px'
-        }}>
-          <h2 style={{
-            fontFamily: 'El Messiri',
-            fontWeight: 700,
-            fontStyle: 'normal',
-            fontSize: '32px',
-            leadingTrim: 'NONE',
-            lineHeight: '100%',
-            letterSpacing: '0px',
-            color: '#0F0F0F',
-            marginBottom: '20px',
-            marginTop: '0'
-          }}>
-            عناصر الطلب
-          </h2>
-
-          {/* Order Items */}
-          <div style={{ marginBottom: '30px' }}>
-            {cartItems.map((item) => (
-              <div
-                key={item.id}
-                style={{
-                  display: 'flex',
-                  gap: '20px',
-                  padding: '15px',
-                  backgroundColor: '#EFEFEF',
-                  borderRadius: '8px',
-                  border: ' #C1C1C1',
-                  marginBottom: '16px',
-                  alignItems: 'flex-start',
-                  fontFamily: 'Cairo'
-                }}
-              >
-                {/* Left Side - Image and Info (formerly Right) */}
-                <div style={{
-                  display: 'flex',
-                  gap: '12px',
-                  alignItems: 'flex-start',
-                  flexShrink: 0
-                }}>
-                  {/* Product Image */}
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    style={{
-                      width: '125px',
-                      height: '140px',
-                      objectFit: 'cover',
-                      borderRadius: '6px'
-                    }}
-                  />
-
-                  {/* Name and Info Column */}
-                  <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '6px',
-                    textAlign: 'right'
-                  }}>
-                    {/* Product Name */}
-                    <h3 style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 600,
-                      fontStyle: 'normal',
-                      fontSize: '24px',
-                      lineHeight: '24px',
-                      letterSpacing: '0px',
-                      textAlign: 'right',
-                      color: '#0F0F0F',
-                      margin: '0'
-                    }}>
-                      {item.name}
-                    </h3>
-
-                    {/* Size, Color, Quantity Info */}
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '15px',
-                      fontSize: '12px',
-                      color: '#0F0F0F',
-                      fontFamily: 'Calibri',
-                      minWidth: '70px',
-                      marginTop: '20px'
-                    }}>
-                      <div>
-                        <span style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '20px', letterSpacing: '0px' }}>المقاس:</span> <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '16px', lineHeight: '20px', letterSpacing: '0px' }}>{item.size}</span>
-                      </div>
-                      <div>
-                        <span style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '20px', letterSpacing: '0px' }}>اللون:</span> <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '16px', lineHeight: '20px', letterSpacing: '0px' }}>{item.color}</span>
-                      </div>
-                      <div>
-                        <span style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '20px', letterSpacing: '0px' }}>الكمية:</span> <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '16px', lineHeight: '20px', letterSpacing: '0px' }}>{item.quantity.toLocaleString('en-US')}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Center - Empty */}
-                <div style={{
-                  textAlign: 'right',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '8px'
-                }}>
-                </div>
-
-                {/* Right Side - Price and Ry Image (formerly Left) */}
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '12px',
-                  minWidth: '70px',
-                  backgroundColor: 'transparent'
-                }}>
-                  {/* Price */}
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    whiteSpace: 'nowrap'
-                  }}>
-                    <span style={{
-                      fontFamily: 'Calibri',
-                      fontWeight: 700,
-                      fontSize: '32px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      color: '#0F0F0F'
-                    }}>
-                      {item.price.toLocaleString('en-US')}
-                    </span>
-                    <img
-                      src="/image/ryy.jpeg"
-                      alt="ريال"
-                      style={{
-                        width: '30px',
-                        height: '30px',
-                        objectFit: 'contain',
-
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Summary Details */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'auto 1fr',
-          gap: '24px 40px',
-          padding: '20px',
-          backgroundColor: '#FFF',
-          borderRadius: '8px',
-          border: '1px solid #EEE',
-          marginBottom: '40px'
-        }}>
-          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666', textAlign: 'right' }}>المبلغ الإجمالي</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
-            <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666' }}>{subtotal.toLocaleString('en-US')}</span>
-            <img src="/image/ry.jpeg" alt="ريال" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
-          </div>
-
-          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666', textAlign: 'right' }}>مصاريف التوصيل</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
-            <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666' }}>{shipping.toLocaleString('en-US')}</span>
-            <img src="/image/ry.jpeg" alt="ريال" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
-          </div>
-
-          <span style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '24px', color: '#666', textAlign: 'right' }}>المبلغ كامل</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
-            <span style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '24px', color: '#0F0F0F' }}>{total.toLocaleString('en-US')}</span>
-            <img src="/image/ry.jpeg" alt="ريال" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
-          </div>
-        </div>
-
-        {/* Confirm Order Button */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          marginBottom: '40px'
-        }}>
-          <button
-            style={{
-              fontFamily: 'Calibri',
-              fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              backgroundColor: '#017A9F',
-              color: '#FFF',
-              padding: '14px 60px',
-              borderRadius: '6px',
-              border: 'none',
-              cursor: 'pointer',
-              outline: 'none'
-            }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = '#015a7d'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = '#017A9F'}
-          >
-            تأكيد الطلب
-          </button>
-        </div>
       </div>
-    </div >
+    </div>
   );
 }
 

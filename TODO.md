@@ -1,6 +1,15 @@
-# TODO for Adding Search Button to Account Page
+# Task: Replace Header in Checkout.js with Header from Purchase.js
 
-- [x] Edit Header.js to add 'showSearch' prop and conditionally render search input
-- [x] Edit Account.js to pass showSearch={false} to Header component
-- [x] Add search input with same styling to Account.js page content
-- [x] Test the changes to ensure search input appears in account page and is hidden in header
+## Plan:
+- [x] Modify src/pages/Checkout.js:
+  - [x] Remove the Header component import
+  - [x] Replace `<Header showSearch={false} />` with the custom inline header from Purchase.js
+  - [x] Adjust marginTop if needed
+
+## Details:
+- The header from Purchase.js includes:
+  - Fixed positioning
+  - Logo image
+  - Navigation links
+  - Search input and icons
+  - Divider line

@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import WashingGuide from './pages/WashingGuide';
 import ReturnPolicy from './pages/ReturnPolicy';
 import Purchase from './pages/Purchase';
+import Checkout from './pages/Checkout';
 import ProductDetail from './pages/ProductDetail';
 import Account from './pages/profile/Account';
 import Orders from './pages/profile/Orders';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/washing-guide" element={<WashingGuide />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/purchase" element={<Purchase />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/product-detail" element={<ProductDetail />} />
           <Route path="/account" element={<Account />} />
           <Route path="/orders" element={<Orders />} />
