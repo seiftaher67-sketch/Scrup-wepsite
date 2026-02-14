@@ -41,6 +41,7 @@ function App() {
           <Route path="/resorts" element={<Resorts />} />
           <Route path="/addresses" element={<Addresses />} />
           <Route path="/payments" element={<Payments />} />
+          <Route path="/track-order" element={<TrackOrder />} />
           <Route path="/track-order/:orderId" element={<TrackOrder />} />
           <Route path="/return-request/:orderNumber" element={<ReturnRequest />} />
         </Routes>

@@ -264,7 +264,6 @@ export default function TrackOrder() {
                             <div className="flex justify-between relative z-10">
                                 {order.steps.map((step, idx) => {
                                     const Icon = step.icon;
-                                    const isFirstStep = idx === 0;
 
                                     return (
                                         <div
