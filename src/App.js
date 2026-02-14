@@ -18,6 +18,7 @@ import Orders from './pages/profile/Orders';
 import Resorts from './pages/profile/Resorts';
 import Addresses from './pages/profile/Addresses';
 import Payments from './pages/profile/Payments';
+import TrackOrder from './pages/profile/TrackOrder';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/resorts" element={<Resorts />} />
           <Route path="/addresses" element={<Addresses />} />
           <Route path="/payments" element={<Payments />} />
+          <Route path="/track-order/:orderId" element={<TrackOrder />} />
         </Routes>
         <Footer />
       </div>

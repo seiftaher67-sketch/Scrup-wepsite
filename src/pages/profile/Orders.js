@@ -13,9 +13,9 @@ export default function Orders() {
         <div className="max-w-[1280px] mx-auto px-4 py-10">
           {/* Page Title */}
           <h1 style={{ fontFamily: 'El Messiri', fontSize: '55px', marginTop: '-30px', fontWeight: 'bold', color: '#022B3A' }}>طلباتي</h1>
-         <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
+          <p style={{ fontSize: '32px', color: '#3F4254', marginTop: '-10px', marginBottom: '40px' }}>
 
-إدارة طلبات الإرجاع وتتبع حالة الاسترداد          </p>
+            إدارة طلبات الإرجاع وتتبع حالة الاسترداد          </p>
 
           {/* Layout */}
           <div className="grid grid-cols-[460px_1fr] gap-10 items-start">
@@ -56,12 +56,14 @@ export default function Orders() {
 
 
                   <div className="flex gap-3 mr-40 mt-20">
-                    <button
-                      className="px-16 py-2  border border-[#022B3A] rounded-lg
+                    <Link to={`/track-order/${index}`}>
+                      <button
+                        className="px-16 py-2  border border-[#022B3A] rounded-lg
                   text-sm font-bold text-[#022B3A] hover:bg-[#022B3A] hover:text-white transition"
-                    >
-                      تتبع الطلب
-                    </button>
+                      >
+                        تتبع الطلب
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}

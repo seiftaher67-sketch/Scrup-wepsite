@@ -7,7 +7,7 @@ export default function Account() {
   const [activeTab, setActiveTab] = useState('account');
   return (
     <div className="w-full min-h-screen bg-gray-50">
-      <Header />
+      <Header showSearch={true} />
 
 
       {/* ================= CONTENT ================= */}
