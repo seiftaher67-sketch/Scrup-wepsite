@@ -291,7 +291,7 @@ export default function TrackOrder() {
                                             </div>
 
                                             {/* التاريخ */}
-                                            <div className="mt-1 font-[Cairo] text-xs text-gray-400">
+                                            <div className="mt-2 font-[Cairo] text-sm font-medium text-gray-600">
                                                 {step.date}
                                             </div>
                                         </div>

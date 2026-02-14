@@ -20,10 +20,12 @@ import Addresses from './pages/profile/Addresses';
 import Payments from './pages/profile/Payments';
 import TrackOrder from './pages/profile/TrackOrder';
 import ReturnRequest from './pages/profile/ReturnRequest';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Routes>
           <Route path="/" element={<Home />} />
