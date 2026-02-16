@@ -21,6 +21,7 @@ import Payments from './pages/profile/Payments';
 import TrackOrder from './pages/profile/TrackOrder';
 import ReturnRequest from './pages/profile/ReturnRequest';
 import ScrollToTop from './components/ScrollToTop';
+import Details from './pages/Details';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/track-order" element={<TrackOrder />} />
           <Route path="/track-order/:orderId" element={<TrackOrder />} />
           <Route path="/return-request/:orderNumber" element={<ReturnRequest />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
         <Footer />
       </div>

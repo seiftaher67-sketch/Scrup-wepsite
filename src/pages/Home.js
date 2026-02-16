@@ -475,200 +475,202 @@ function Index() {
           }}
         >
           {products.slice(currentIndex, currentIndex + cardsPerView).map((img, index) => (
-            <div
-              key={index}
-              style={{
-                width: '400px',
-                height: '520px',
-                backgroundColor: '#fff',
-                borderRadius: '10px',
-                overflow: 'hidden',
-                fontFamily: 'Cairo',
-                direction: 'rtl',
-                opacity: 1,
-                paddingRight: '0px'
-              }}
-            >
-              {/* Image Wrapper */}
+            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
               <div
+                key={index}
                 style={{
-                  position: 'relative',
-                  backgroundColor: '#F7F7F7',
-                  padding: '0',
-                  textAlign: 'center',
-                  height: '382px'
+                  width: '400px',
+                  height: '520px',
+                  backgroundColor: '#fff',
+                  borderRadius: '10px',
+                  overflow: 'hidden',
+                  fontFamily: 'Cairo',
+                  direction: 'rtl',
+                  opacity: 1,
+                  paddingRight: '0px'
                 }}
               >
-                {/* Image */}
-                <img
-                  src={img}
-                  alt="product"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-
-                {/* Left Arrow for first card */}
-                {index === 0 && (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      left: '1px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      width: '42px',
-                      height: '42px',
-                      borderRadius: '50%',
-                      backgroundColor: '#E5E7EB',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: currentIndex > 0 ? 'pointer' : 'not-allowed',
-                      opacity: currentIndex > 0 ? 1 : 0.5
-                    }}
-                    onClick={() => currentIndex > 0 && setCurrentIndex(currentIndex - 1)}
-                  >
-                    <img src='/image/sahmcard.png' alt="sahmcard.png" />
-                  </div>
-                )}
-
-                {/* Right Arrow for last card */}
-                {index === cardsPerView - 1 && (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      right: '1px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      width: '42px',
-                      height: '42px',
-                      borderRadius: '50%',
-                      backgroundColor: '#E5E7EB',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: currentIndex + cardsPerView < products.length ? 'pointer' : 'not-allowed',
-                      opacity: currentIndex + cardsPerView < products.length ? 1 : 0.5
-                    }}
-                    onClick={() => currentIndex + cardsPerView < products.length && setCurrentIndex(currentIndex + 1)}
-                  >
-                    <img src='/image/sahmcard11.png' alt="sahmcard11.png" />
-                  </div>
-                )}
-              </div>
-
-              {/* Content */}
-              <div style={{ padding: '5px 20px', marginTop: '10px' }}>
-                {/* Title and Colors on same line */}
+                {/* Image Wrapper */}
                 <div
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '6px',
-                    marginTop: '-5px'
+                    position: 'relative',
+                    backgroundColor: '#F7F7F7',
+                    padding: '0',
+                    textAlign: 'center',
+                    height: '382px'
                   }}
                 >
-                  {/* Title on left */}
-                  <h3
+                  {/* Image */}
+                  <img
+                    src={img}
+                    alt="product"
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '150%',
-                      letterSpacing: '0%',
-                      color: '#000000',
-                      margin: 0
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
                     }}
-                  >
-                    سكراب ميديكل
-                  </h3>
+                  />
 
-                  {/* Color dots on right */}
+                  {/* Left Arrow for first card */}
+                  {index === 0 && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        left: '1px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '50%',
+                        backgroundColor: '#E5E7EB',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: currentIndex > 0 ? 'pointer' : 'not-allowed',
+                        opacity: currentIndex > 0 ? 1 : 0.5
+                      }}
+                      onClick={() => currentIndex > 0 && setCurrentIndex(currentIndex - 1)}
+                    >
+                      <img src='/image/sahmcard.png' alt="sahmcard.png" />
+                    </div>
+                  )}
+
+                  {/* Right Arrow for last card */}
+                  {index === cardsPerView - 1 && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        right: '1px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '50%',
+                        backgroundColor: '#E5E7EB',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: currentIndex + cardsPerView < products.length ? 'pointer' : 'not-allowed',
+                        opacity: currentIndex + cardsPerView < products.length ? 1 : 0.5
+                      }}
+                      onClick={() => currentIndex + cardsPerView < products.length && setCurrentIndex(currentIndex + 1)}
+                    >
+                      <img src='/image/sahmcard11.png' alt="sahmcard11.png" />
+                    </div>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div style={{ padding: '5px 20px', marginTop: '10px' }}>
+                  {/* Title and Colors on same line */}
                   <div
                     style={{
                       display: 'flex',
-                      gap: '5px'
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      marginBottom: '6px',
+                      marginTop: '-5px'
                     }}
                   >
-                    {['#0148D6', '#0000005C', '#5B0202', '#000000'].map((c, i) => (
-                      <span
-                        key={i}
+                    {/* Title on left */}
+                    <h3
+                      style={{
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '150%',
+                        letterSpacing: '0%',
+                        color: '#000000',
+                        margin: 0
+                      }}
+                    >
+                      سكراب ميديكل
+                    </h3>
+
+                    {/* Color dots on right */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: '5px'
+                      }}
+                    >
+                      {['#0148D6', '#0000005C', '#5B0202', '#000000'].map((c, i) => (
+                        <span
+                          key={i}
+                          style={{
+                            width: '30px',
+                            height: '30px',
+                            borderRadius: '50%',
+                            backgroundColor: c,
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Price */}
+
+                  {/* Button and Price on same line */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      marginBottom: '14px',
+                      marginTop: '20px'
+                    }}
+                  >
+                    {/* Price */}
+                    <p
+                      style={{
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        margin: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px'
+                      }}
+                    >
+                      250
+                      <img
+                        src="/image/ry.jpeg"
+                        alt="ريال"
                         style={{
-                          width: '30px',
-                          height: '30px',
-                          borderRadius: '50%',
-                          backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                          height: '18px',
+                          width: 'auto'
                         }}
                       />
-                    ))}
+                    </p>
+
+                    <button
+                      style={{
+                        backgroundColor: '#0F6A7B',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '50px',
+                        padding: '7px 16px',
+                        fontSize: '17px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        width: '146px',
+                        height: '44px',
+                        fontFamily: 'Cairo',
+
+
+
+
+                      }}
+                    >
+                      + أضف للسلة
+                    </button>
                   </div>
                 </div>
-
-                {/* Price */}
-
-                {/* Button and Price on same line */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '14px',
-                    marginTop: '20px'
-                  }}
-                >
-                  {/* Price */}
-                  <p
-                    style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      margin: 0,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '5px'
-                    }}
-                  >
-                    250
-                    <img
-                      src="/image/ry.jpeg"
-                      alt="ريال"
-                      style={{
-                        height: '18px',
-                        width: 'auto'
-                      }}
-                    />
-                  </p>
-
-                  <button
-                    style={{
-                      backgroundColor: '#0F6A7B',
-                      color: '#fff',
-                      border: 'none',
-                      borderRadius: '50px',
-                      padding: '7px 16px',
-                      fontSize: '17px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      width: '146px',
-                      height: '44px',
-                      fontFamily: 'Cairo',
-
-
-
-
-                    }}
-                  >
-                    + أضف للسلة
-                  </button>
-                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -1348,7 +1350,7 @@ function Index() {
         </div>
       )}
 
-    
+
     </div>
   );
 }
