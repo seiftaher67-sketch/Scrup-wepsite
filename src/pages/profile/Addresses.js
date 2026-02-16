@@ -25,7 +25,7 @@ export default function Addresses() {
             <div className="rounded-2xl p-6 shadow-sm max-w-[1758px]">
               {/* Address Input */}
 
-              <label style={{ color: '#3F4254', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right', marginTop: '-20px' }}>ادخل العنوان</label>
+              <label style={{ color: '#3F4254', fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>ادخل العنوان</label>
 
               {/* Sub Input */}
               <input

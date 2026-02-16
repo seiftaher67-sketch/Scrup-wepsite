@@ -10,6 +10,18 @@ function Women() {
     { img: '/image/woman2.jpg', price: 300, sales: 80 },
     { img: '/image/woman3.jpg', price: 200, sales: 120 }
   ]);
+
+  // State for selected images based on color selection
+  const [selectedImage1, setSelectedImage1] = useState('/image/woman1.jpg');
+  const [selectedImage2, setSelectedImage2] = useState('/image/woman2.jpg');
+  const [selectedImage3, setSelectedImage3] = useState('/image/woman3.jpg');
+  const [selectedImage4, setSelectedImage4] = useState('/image/woman1.jpg');
+  const [selectedImage5, setSelectedImage5] = useState('/image/woman2.jpg');
+  const [selectedImage6, setSelectedImage6] = useState('/image/woman3.jpg');
+  const [selectedImage7, setSelectedImage7] = useState('/image/woman1.jpg');
+  const [selectedImage8, setSelectedImage8] = useState('/image/woman2.jpg');
+  const [selectedImage9, setSelectedImage9] = useState('/image/woman3.jpg');
+
   const [isButtonHovered, setIsButtonHovered] = useState(false);
   const [isTitle1Visible, setIsTitle1Visible] = useState(false);
   const [isTitle2Visible, setIsTitle2Visible] = useState(false);
@@ -24,6 +36,50 @@ function Women() {
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   const navigate = useNavigate();
+
+  // Color to image mapping
+  const colorToImage = {
+    '#0D47A1': '/image/chang1.jpg',  // Blue
+    '#BDBDBD': '/image/chang2.jpg',  // Gray
+    '#7B1113': '/image/chang4.jpg',  // Purple
+    '#000000': '/image/chang3.jpg'   // Black
+  };
+
+  // Handle color click for each product card
+  const handleColorClick = (color, cardIndex) => {
+    const newImage = colorToImage[color];
+    if (cardIndex === 0) {
+      setSelectedImage1(newImage);
+    } else if (cardIndex === 1) {
+      setSelectedImage2(newImage);
+    } else if (cardIndex === 2) {
+      setSelectedImage3(newImage);
+    }
+  };
+
+  // Handle color click for section 2
+  const handleColorClick2 = (color, cardIndex) => {
+    const newImage = colorToImage[color];
+    if (cardIndex === 0) {
+      setSelectedImage4(newImage);
+    } else if (cardIndex === 1) {
+      setSelectedImage5(newImage);
+    } else if (cardIndex === 2) {
+      setSelectedImage6(newImage);
+    }
+  };
+
+  // Handle color click for section 3
+  const handleColorClick3 = (color, cardIndex) => {
+    const newImage = colorToImage[color];
+    if (cardIndex === 0) {
+      setSelectedImage7(newImage);
+    } else if (cardIndex === 1) {
+      setSelectedImage8(newImage);
+    } else if (cardIndex === 2) {
+      setSelectedImage9(newImage);
+    }
+  };
 
   const handleSort = (type) => {
     setSortType(type);
@@ -211,152 +267,155 @@ function Women() {
           }}
         >
           {products.map((product, index) => (
-            <div
-              key={index}
-              style={{
-                width: '400px',
-                height: '520px',
-                backgroundColor: '#fff',
-                borderRadius: '10px',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
-                overflow: 'hidden',
-                fontFamily: 'Cairo',
-                direction: 'rtl',
-                opacity: 1,
-                paddingRight: '0px'
-              }}
-            >
-              {/* Image Wrapper */}
+            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
               <div
                 style={{
-                  position: 'relative',
-                  backgroundColor: '#F7F7F7',
-                  padding: '0',
-                  textAlign: 'center',
-                  height: '382px'
+                  width: '400px',
+                  height: '520px',
+                  backgroundColor: '#fff',
+                  borderRadius: '10px',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
+                  overflow: 'hidden',
+                  fontFamily: 'Cairo',
+                  direction: 'rtl',
+                  opacity: 1,
+                  paddingRight: '0px'
                 }}
               >
-                {/* Image */}
-                <img
-                  src={product.img}
-                  alt="product"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-
-
-              </div>
-
-              {/* Content */}
-              <div style={{ padding: '5px 20px', marginTop: '10px' }}>
-                {/* Title and Colors on same line */}
+                {/* Image Wrapper */}
                 <div
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '6px',
-                    marginTop: '-5px'
+                    position: 'relative',
+                    backgroundColor: '#F7F7F7',
+                    padding: '0',
+                    textAlign: 'center',
+                    height: '382px'
                   }}
                 >
-                  {/* Title on left */}
-                  <h3
+                  {/* Image */}
+                  <img
+                    src={index === 0 ? selectedImage1 : index === 1 ? selectedImage2 : selectedImage3}
+                    alt="product"
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '150%',
-                      letterSpacing: '0%',
-                      color: '#000000',
-                      margin: 0
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
                     }}
-                  >
-                    سكراب ميديكل
-                  </h3>
+                  />
 
-                  {/* Color dots on right */}
+
+                </div>
+
+                {/* Content */}
+                <div style={{ padding: '5px 20px', marginTop: '10px' }}>
+                  {/* Title and Colors on same line */}
                   <div
                     style={{
                       display: 'flex',
-                      gap: '5px'
-
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      marginBottom: '6px',
+                      marginTop: '-5px'
                     }}
                   >
-                    {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          width: '30px',
-                          height: '30px',
-                          borderRadius: '50%',
-                          backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                        }}
-                      />
-                    ))}
+                    {/* Title on left */}
+                    <h3
+                      style={{
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '150%',
+                        letterSpacing: '0%',
+                        color: '#000000',
+                        margin: 0
+                      }}
+                    >
+                      سكراب ميديكل
+                    </h3>
+
+                    {/* Color dots on right */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: '5px'
+
+                      }}
+                    >
+                      {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
+                        <span
+                          key={i}
+                          onClick={() => handleColorClick(c, index)}
+                          style={{
+                            width: '30px',
+                            height: '30px',
+                            borderRadius: '50%',
+                            backgroundColor: c,
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                            cursor: 'pointer'
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Price */}
-
-                {/* Button and Price on same line */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '14px',
-                    marginTop: '20px'
-                  }}
-                >
                   {/* Price */}
-                  <p
+
+                  {/* Button and Price on same line */}
+                  <div
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      margin: 0,
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '5px'
+                      justifyContent: 'space-between',
+                      marginBottom: '14px',
+                      marginTop: '20px'
                     }}
                   >
-                    {product.price}
-                    <img
-                      src="/image/ry.jpeg"
-                      alt="ريال"
+                    {/* Price */}
+                    <p
                       style={{
-                        height: '18px',
-                        width: 'auto'
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        margin: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px'
                       }}
-                    />
-                  </p>
+                    >
+                      {product.price}
+                      <img
+                        src="/image/ry.jpeg"
+                        alt="ريال"
+                        style={{
+                          height: '18px',
+                          width: 'auto'
+                        }}
+                      />
+                    </p>
 
-                  <button
-                    style={{
-                      backgroundColor: '#0F6A7B',
-                      color: '#fff',
-                      border: 'none',
-                      borderRadius: '50px',
-                      padding: '7px 16px',
-                      fontSize: '17px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      width: '146px',
-                      height: '44px',
-                      fontFamily: 'Cairo'
-                    }}
-                  >
-                    + أضف للسلة
-                  </button>
+                    <button
+                      style={{
+                        backgroundColor: '#0F6A7B',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '50px',
+                        padding: '7px 16px',
+                        fontSize: '17px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        width: '146px',
+                        height: '44px',
+                        fontFamily: 'Cairo'
+                      }}
+                    >
+                      + أضف للسلة
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -367,7 +426,6 @@ function Women() {
 
 
 
-
         {/* Product Cards */}
         <div
           style={{
@@ -382,151 +440,154 @@ function Women() {
           }}
         >
           {products.map((product, index) => (
-            <div
-              key={index}
-              style={{
-                width: '400px',
-                height: '505px',
-                backgroundColor: '#fff',
-                borderRadius: '10px',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
-                overflow: 'hidden',
-                fontFamily: 'Cairo',
-                direction: 'rtl',
-                opacity: 1,
-                paddingRight: '0px'
-              }}
-            >
-              {/* Image Wrapper */}
+            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
               <div
                 style={{
-                  position: 'relative',
-                  backgroundColor: '#F7F7F7',
-                  padding: '0',
-                  textAlign: 'center',
-                  height: '382px'
+                  width: '400px',
+                  height: '505px',
+                  backgroundColor: '#fff',
+                  borderRadius: '10px',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
+                  overflow: 'hidden',
+                  fontFamily: 'Cairo',
+                  direction: 'rtl',
+                  opacity: 1,
+                  paddingRight: '0px'
                 }}
               >
-                {/* Image */}
-                <img
-                  src={product.img}
-                  alt="product"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-
-
-              </div>
-
-              {/* Content */}
-              <div style={{ padding: '5px 20px', marginTop: '10px' }}>
-                {/* Title and Colors on same line */}
+                {/* Image Wrapper */}
                 <div
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '6px',
-                    marginTop: '-5px'
+                    position: 'relative',
+                    backgroundColor: '#F7F7F7',
+                    padding: '0',
+                    textAlign: 'center',
+                    height: '382px'
                   }}
                 >
-                  {/* Title on left */}
-                  <h3
+                  {/* Image */}
+                  <img
+                    src={index === 0 ? selectedImage4 : index === 1 ? selectedImage5 : selectedImage6}
+                    alt="product"
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '150%',
-                      letterSpacing: '0%',
-                      color: '#000000',
-                      margin: 0
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
                     }}
-                  >
-                    سكراب ميديكل
-                  </h3>
+                  />
 
-                  {/* Color dots on right */}
+
+                </div>
+
+                {/* Content */}
+                <div style={{ padding: '5px 20px', marginTop: '10px' }}>
+                  {/* Title and Colors on same line */}
                   <div
                     style={{
                       display: 'flex',
-                      gap: '5px'
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      marginBottom: '6px',
+                      marginTop: '-5px'
                     }}
                   >
-                    {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          width: '30px',
-                          height: '30px',
-                          borderRadius: '50%',
-                          backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                        }}
-                      />
-                    ))}
+                    {/* Title on left */}
+                    <h3
+                      style={{
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '150%',
+                        letterSpacing: '0%',
+                        color: '#000000',
+                        margin: 0
+                      }}
+                    >
+                      سكراب ميديكل
+                    </h3>
+
+                    {/* Color dots on right */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: '5px'
+                      }}
+                    >
+                      {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
+                        <span
+                          key={i}
+                          onClick={() => handleColorClick2(c, index)}
+                          style={{
+                            width: '30px',
+                            height: '30px',
+                            borderRadius: '50%',
+                            backgroundColor: c,
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                            cursor: 'pointer'
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Price */}
-
-                {/* Button and Price on same line */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '14px',
-                    marginTop: '20px'
-                  }}
-                >
                   {/* Price */}
-                  <p
+
+                  {/* Button and Price on same line */}
+                  <div
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      margin: 0,
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '5px'
+                      justifyContent: 'space-between',
+                      marginBottom: '14px',
+                      marginTop: '20px'
                     }}
                   >
-                    {product.price}
-                    <img
-                      src="/image/ry.jpeg"
-                      alt="ريال"
+                    {/* Price */}
+                    <p
                       style={{
-                        height: '18px',
-                        width: 'auto'
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        margin: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px'
                       }}
-                    />
-                  </p>
+                    >
+                      {product.price}
+                      <img
+                        src="/image/ry.jpeg"
+                        alt="ريال"
+                        style={{
+                          height: '18px',
+                          width: 'auto'
+                        }}
+                      />
+                    </p>
 
-                  <button
-                    style={{
-                      backgroundColor: '#0F6A7B',
-                      color: '#fff',
-                      border: 'none',
-                      borderRadius: '50px',
-                      padding: '7px 16px',
-                      fontSize: '17px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      width: '146px',
-                      height: '44px',
-                      fontFamily: 'Cairo'
-                    }}
-                  >
-                    + أضف للسلة
-                  </button>
+                    <button
+                      style={{
+                        backgroundColor: '#0F6A7B',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '50px',
+                        padding: '7px 16px',
+                        fontSize: '17px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        width: '146px',
+                        height: '44px',
+                        fontFamily: 'Cairo'
+                      }}
+                    >
+                      + أضف للسلة
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -537,7 +598,6 @@ function Women() {
 
 
 
-
         {/* Product Cards */}
         <div
           style={{
@@ -552,151 +612,154 @@ function Women() {
           }}
         >
           {products.map((product, index) => (
-            <div
-              key={index}
-              style={{
-                width: '400px',
-                height: '505px',
-                backgroundColor: '#fff',
-                borderRadius: '10px',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
-                overflow: 'hidden',
-                fontFamily: 'Cairo',
-                direction: 'rtl',
-                opacity: 1,
-                paddingRight: '0px'
-              }}
-            >
-              {/* Image Wrapper */}
+            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
               <div
                 style={{
-                  position: 'relative',
-                  backgroundColor: '#F7F7F7',
-                  padding: '0',
-                  textAlign: 'center',
-                  height: '382px'
+                  width: '400px',
+                  height: '505px',
+                  backgroundColor: '#fff',
+                  borderRadius: '10px',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.12)',
+                  overflow: 'hidden',
+                  fontFamily: 'Cairo',
+                  direction: 'rtl',
+                  opacity: 1,
+                  paddingRight: '0px'
                 }}
               >
-                {/* Image */}
-                <img
-                  src={product.img}
-                  alt="product"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-
-
-              </div>
-
-              {/* Content */}
-              <div style={{ padding: '5px 20px', marginTop: '10px' }}>
-                {/* Title and Colors on same line */}
+                {/* Image Wrapper */}
                 <div
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '6px',
-                    marginTop: '-5px'
+                    position: 'relative',
+                    backgroundColor: '#F7F7F7',
+                    padding: '0',
+                    textAlign: 'center',
+                    height: '382px'
                   }}
                 >
-                  {/* Title on left */}
-                  <h3
+                  {/* Image */}
+                  <img
+                    src={index === 0 ? selectedImage7 : index === 1 ? selectedImage8 : selectedImage9}
+                    alt="product"
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '150%',
-                      letterSpacing: '0%',
-                      color: '#000000',
-                      margin: 0
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
                     }}
-                  >
-                    سكراب ميديكل
-                  </h3>
+                  />
 
-                  {/* Color dots on right */}
+
+                </div>
+
+                {/* Content */}
+                <div style={{ padding: '5px 20px', marginTop: '10px' }}>
+                  {/* Title and Colors on same line */}
                   <div
                     style={{
                       display: 'flex',
-                      gap: '5px'
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      marginBottom: '6px',
+                      marginTop: '-5px'
                     }}
                   >
-                    {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          width: '30px',
-                          height: '30px',
-                          borderRadius: '50%',
-                          backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                        }}
-                      />
-                    ))}
+                    {/* Title on left */}
+                    <h3
+                      style={{
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '150%',
+                        letterSpacing: '0%',
+                        color: '#000000',
+                        margin: 0
+                      }}
+                    >
+                      سكراب ميديكل
+                    </h3>
+
+                    {/* Color dots on right */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: '5px'
+                      }}
+                    >
+                      {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
+                        <span
+                          key={i}
+                          onClick={() => handleColorClick3(c, index)}
+                          style={{
+                            width: '30px',
+                            height: '30px',
+                            borderRadius: '50%',
+                            backgroundColor: c,
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                            cursor: 'pointer'
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Price */}
-
-                {/* Button and Price on same line */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '14px',
-                    marginTop: '20px'
-                  }}
-                >
                   {/* Price */}
-                  <p
+
+                  {/* Button and Price on same line */}
+                  <div
                     style={{
-                      fontFamily: 'Cairo',
-                      fontWeight: 500,
-                      fontSize: '24px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      margin: 0,
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '5px'
+                      justifyContent: 'space-between',
+                      marginBottom: '14px',
+                      marginTop: '20px'
                     }}
                   >
-                    {product.price}
-                    <img
-                      src="/image/ry.jpeg"
-                      alt="ريال"
+                    {/* Price */}
+                    <p
                       style={{
-                        height: '18px',
-                        width: 'auto'
+                        fontFamily: 'Cairo',
+                        fontWeight: 500,
+                        fontSize: '24px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        margin: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px'
                       }}
-                    />
-                  </p>
+                    >
+                      {product.price}
+                      <img
+                        src="/image/ry.jpeg"
+                        alt="ريال"
+                        style={{
+                          height: '18px',
+                          width: 'auto'
+                        }}
+                      />
+                    </p>
 
-                  <button
-                    style={{
-                      backgroundColor: '#0F6A7B',
-                      color: '#fff',
-                      border: 'none',
-                      borderRadius: '50px',
-                      padding: '7px 16px',
-                      fontSize: '17px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      width: '146px',
-                      height: '44px',
-                      fontFamily: 'Cairo'
-                    }}
-                  >
-                    + أضف للسلة
-                  </button>
+                    <button
+                      style={{
+                        backgroundColor: '#0F6A7B',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '50px',
+                        padding: '7px 16px',
+                        fontSize: '17px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        width: '146px',
+                        height: '44px',
+                        fontFamily: 'Cairo'
+                      }}
+                    >
+                      + أضف للسلة
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

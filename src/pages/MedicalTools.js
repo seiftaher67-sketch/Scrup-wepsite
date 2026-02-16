@@ -10,6 +10,18 @@ function MedicalTools() {
     { img: '/image/ad2.jpg', price: 300, sales: 80 },
     { img: '/image/x2.jpg', price: 200, sales: 120 }
   ]);
+
+  // State for selected images based on color selection
+  const [selectedImage1, setSelectedImage1] = useState('/image/ad1.jpg');
+  const [selectedImage2, setSelectedImage2] = useState('/image/ad2.jpg');
+  const [selectedImage3, setSelectedImage3] = useState('/image/x2.jpg');
+  const [selectedImage4, setSelectedImage4] = useState('/image/ad1.jpg');
+  const [selectedImage5, setSelectedImage5] = useState('/image/ad2.jpg');
+  const [selectedImage6, setSelectedImage6] = useState('/image/x2.jpg');
+  const [selectedImage7, setSelectedImage7] = useState('/image/ad1.jpg');
+  const [selectedImage8, setSelectedImage8] = useState('/image/ad2.jpg');
+  const [selectedImage9, setSelectedImage9] = useState('/image/x2.jpg');
+
   const [isButtonHovered, setIsButtonHovered] = useState(false);
   const [isTitle1Visible, setIsTitle1Visible] = useState(false);
   const [isTitle2Visible, setIsTitle2Visible] = useState(false);
@@ -22,6 +34,50 @@ function MedicalTools() {
   const [isButtonHoveredX2, setIsButtonHoveredX2] = useState(false);
   const [sortType, setSortType] = useState('');
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  // Color to image mapping
+  const colorToImage = {
+    '#0D47A1': '/image/chang1.jpg',  // Blue
+    '#BDBDBD': '/image/chang2.jpg',  // Gray
+    '#7B1113': '/image/chang4.jpg',  // Purple
+    '#000000': '/image/chang3.jpg'   // Black
+  };
+
+  // Handle color click for each product card
+  const handleColorClick = (color, cardIndex) => {
+    const newImage = colorToImage[color];
+    if (cardIndex === 0) {
+      setSelectedImage1(newImage);
+    } else if (cardIndex === 1) {
+      setSelectedImage2(newImage);
+    } else if (cardIndex === 2) {
+      setSelectedImage3(newImage);
+    }
+  };
+
+  // Handle color click for section 2
+  const handleColorClick2 = (color, cardIndex) => {
+    const newImage = colorToImage[color];
+    if (cardIndex === 0) {
+      setSelectedImage4(newImage);
+    } else if (cardIndex === 1) {
+      setSelectedImage5(newImage);
+    } else if (cardIndex === 2) {
+      setSelectedImage6(newImage);
+    }
+  };
+
+  // Handle color click for section 3
+  const handleColorClick3 = (color, cardIndex) => {
+    const newImage = colorToImage[color];
+    if (cardIndex === 0) {
+      setSelectedImage7(newImage);
+    } else if (cardIndex === 1) {
+      setSelectedImage8(newImage);
+    } else if (cardIndex === 2) {
+      setSelectedImage9(newImage);
+    }
+  };
 
   const handleSort = (type) => {
     setSortType(type);
@@ -238,7 +294,7 @@ function MedicalTools() {
               >
                 {/* Image */}
                 <img
-                  src={product.img}
+                  src={index === 0 ? selectedImage1 : index === 1 ? selectedImage2 : selectedImage3}
                   alt="product"
                   style={{
                     width: '100%',
@@ -287,12 +343,14 @@ function MedicalTools() {
                     {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                       <span
                         key={i}
+                        onClick={() => handleColorClick(c, index)}
                         style={{
                           width: '30px',
                           height: '30px',
                           borderRadius: '50%',
                           backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                          cursor: 'pointer'
                         }}
                       />
                     ))}
@@ -410,7 +468,7 @@ function MedicalTools() {
               >
                 {/* Image */}
                 <img
-                  src={product.img}
+                  src={index === 0 ? selectedImage4 : index === 1 ? selectedImage5 : selectedImage6}
                   alt="product"
                   style={{
                     width: '100%',
@@ -459,12 +517,14 @@ function MedicalTools() {
                     {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                       <span
                         key={i}
+                        onClick={() => handleColorClick2(c, index)}
                         style={{
                           width: '30px',
                           height: '30px',
                           borderRadius: '50%',
                           backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                          cursor: 'pointer'
                         }}
                       />
                     ))}
@@ -580,7 +640,7 @@ function MedicalTools() {
               >
                 {/* Image */}
                 <img
-                  src={product.img}
+                  src={index === 0 ? selectedImage7 : index === 1 ? selectedImage8 : selectedImage9}
                   alt="product"
                   style={{
                     width: '100%',
@@ -629,12 +689,14 @@ function MedicalTools() {
                     {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                       <span
                         key={i}
+                        onClick={() => handleColorClick3(c, index)}
                         style={{
                           width: '30px',
                           height: '30px',
                           borderRadius: '50%',
                           backgroundColor: c,
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                          cursor: 'pointer'
                         }}
                       />
                     ))}
