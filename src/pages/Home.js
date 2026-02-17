@@ -59,7 +59,25 @@ function Index() {
   const [isVisibleX1, setIsVisibleX1] = useState(false);
   const [isVisibleX2, setIsVisibleX2] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [selectedColors, setSelectedColors] = useState({});
   const hoverTimeoutRef = useRef(null);
+
+  // Color to image mapping
+  const colorImages = {
+    '#0148D6': '/image/chang1.jpg',
+    '#0000005C': '/image/chang2.jpg',
+    '#5B0202': '/image/chang4.jpg',
+    '#000000': '/image/chang3.jpg'
+  };
+
+  // Handle color selection - when blue (#0148D6) is selected, show chang1.jpg
+  const handleColorSelect = (colorIndex, cardIndex) => {
+    const colors = ['#0148D6', '#0000005C', '#5B0202', '#000000'];
+    setSelectedColors(prev => ({
+      ...prev,
+      [cardIndex]: colors[colorIndex]
+    }));
+  };
 
   const buttonStyle = (isHovered) => ({
     position: 'absolute',
@@ -502,7 +520,7 @@ function Index() {
                 >
                   {/* Image */}
                   <img
-                    src={img}
+                    src={colorImages[selectedColors[currentIndex + index]] || img}
                     alt="product"
                     style={{
                       width: '100%',
@@ -597,12 +615,18 @@ function Index() {
                       {['#0148D6', '#0000005C', '#5B0202', '#000000'].map((c, i) => (
                         <span
                           key={i}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleColorSelect(i, currentIndex + index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',
                             borderRadius: '50%',
                             backgroundColor: c,
-                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                            cursor: 'pointer',
+                            border: selectedColors[currentIndex + index] === c ? '2px solid #000' : 'none'
                           }}
                         />
                       ))}

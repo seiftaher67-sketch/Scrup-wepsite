@@ -342,7 +342,11 @@ function Men() {
                       {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                         <span
                           key={i}
-                          onClick={() => handleColorClick(c, index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleColorClick(c, index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',
@@ -515,7 +519,11 @@ function Men() {
                       {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                         <span
                           key={i}
-                          onClick={() => handleColorClick2(c, index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleColorClick2(c, index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',
@@ -688,7 +696,11 @@ function Men() {
                       {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                         <span
                           key={i}
-                          onClick={() => handleColorClick3(c, index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleColorClick3(c, index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',

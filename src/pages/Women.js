@@ -267,7 +267,7 @@ function Women() {
           }}
         >
           {products.map((product, index) => (
-            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
+            <Link key={index} to="/product-detail" style={{ textDecoration: 'none' }}>
               <div
                 style={{
                   width: '400px',
@@ -344,7 +344,11 @@ function Women() {
                       {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                         <span
                           key={i}
-                          onClick={() => handleColorClick(c, index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleColorClick(c, index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',
@@ -440,7 +444,7 @@ function Women() {
           }}
         >
           {products.map((product, index) => (
-            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
+            <Link key={index} to="/product-detail" style={{ textDecoration: 'none' }}>
               <div
                 style={{
                   width: '400px',
@@ -516,7 +520,11 @@ function Women() {
                       {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                         <span
                           key={i}
-                          onClick={() => handleColorClick2(c, index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleColorClick2(c, index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',
@@ -612,7 +620,7 @@ function Women() {
           }}
         >
           {products.map((product, index) => (
-            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
+            <Link key={index} to="/product-detail" style={{ textDecoration: 'none' }}>
               <div
                 style={{
                   width: '400px',
@@ -688,7 +696,11 @@ function Women() {
                       {['#000000', '#7B1113', '#BDBDBD', '#0D47A1'].map((c, i) => (
                         <span
                           key={i}
-                          onClick={() => handleColorClick3(c, index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleColorClick3(c, index);
+                          }}
                           style={{
                             width: '30px',
                             height: '30px',
