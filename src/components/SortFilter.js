@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 export default function SortFilter({ onSort }) {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const [selectedText, setSelectedText] = useState("فرز حسب");
     const dropdownRef = useRef(null);
 

@@ -609,15 +609,45 @@ function Index() {
                     <div
                       style={{
                         display: 'flex',
-                        gap: '5px'
+                        gap: '5px',
+                        alignItems: 'center'
                       }}
                     >
-                      {['#0148D6', '#0000005C', '#5B0202', '#000000'].map((c, i) => (
+                      {/* blus.jpeg image first */}
+                      <img
+                        src="/image/blus.jpeg"
+                        alt="blus"
+                        style={{
+                          width: '30px',
+                          height: '30px',
+                          borderRadius: '50%',
+                          marginRight: '5px',
+                          objectFit: 'cover'
+                        }}
+                      />
+                      {/* Blue color after image */}
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleColorSelect(0, currentIndex + index);
+                        }}
+                        style={{
+                          width: '30px',
+                          height: '30px',
+                          borderRadius: '50%',
+                          backgroundColor: '#0148D6',
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                          cursor: 'pointer',
+                          border: selectedColors[currentIndex + index] === '#0148D6' ? '2px solid #000' : 'none'
+                        }}
+                      />
+                      {/* Remaining colors */}
+                      {['#0000005C', '#5B0202', '#000000'].map((c, i) => (
                         <span
-                          key={i}
+                          key={i + 1}
                           onClick={(e) => {
                             e.preventDefault();
-                            handleColorSelect(i, currentIndex + index);
+                            handleColorSelect(i + 1, currentIndex + index);
                           }}
                           style={{
                             width: '30px',
@@ -680,7 +710,7 @@ function Index() {
                         fontSize: '17px',
                         fontWeight: 600,
                         cursor: 'pointer',
-                        width: '146px',
+                        width: '168px',
                         height: '44px',
                         fontFamily: 'Cairo',
 
