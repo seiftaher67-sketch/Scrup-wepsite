@@ -269,7 +269,7 @@ function MedicalTools() {
         >
           {products.map((product, index) => (
             <Link
-              to="/product-detail"
+              to="/details"
               style={{ textDecoration: 'none' }}
               key={index}
             >

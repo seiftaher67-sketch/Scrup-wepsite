@@ -275,7 +275,7 @@ function Men() {
           }}
         >
           {products.map((product, index) => (
-            <Link key={index} to="/product-detail" style={{ textDecoration: 'none' }}>
+            <Link key={index} to="/details" style={{ textDecoration: 'none' }}>
               <div
                 style={{
                   width: '400px',
