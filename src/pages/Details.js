@@ -191,7 +191,8 @@ function Details() {
                         </div>
 
                         {/* الأزرار */}
-                        <button className="buy-btn">اشتري الآن</button>
+
+                        <Link to="/product-detail" style={{ textDecoration: 'none' }}><button className="buy-btn">أشتري الأن</button></Link>
                         <button className="cart-btn">أضف إلى السلة</button>
                     </div>
 

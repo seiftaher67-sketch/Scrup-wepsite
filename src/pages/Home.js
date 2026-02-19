@@ -61,6 +61,7 @@ function Index() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [selectedColors, setSelectedColors] = useState({});
   const hoverTimeoutRef = useRef(null);
+  const threeCardsRef = useRef(null);
 
   // Color to image mapping
   const colorImages = {
@@ -96,6 +97,10 @@ function Index() {
     transition: 'background 0.3s ease, box-shadow 0.3s ease',
     boxShadow: isHovered ? 'inset 0 -16px 16px rgba(0,0,0,0.6)' : 'inset 0 -12px 12px rgba(0,0,0,0.5)'
   });
+
+  const scrollToThreeCards = () => {
+    threeCardsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -315,22 +320,21 @@ function Index() {
         <p style={{ fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '0px', wordSpacing: '5px' }}>تناسب ساعات العمل الطويل.راحة، متانة  </p>
         <p style={{ fontFamily: 'El Messiri', fontWeight: 500, fontSize: '24px', lineHeight: '150%', letterSpacing: '0%', textAlign: 'right', color: '#FFFFFF', marginTop: '-4px', wordSpacing: '5px' }}>ومقاسات تناسب الجميع</p>
       </div>
-      <Link to="/women" style={{ textDecoration: 'none' }}>
-        <button
-          style={buttonStyle(isHovered)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <span style={{
-            display: 'inline-block',
-            transition: 'transform 0.3s ease, font-size 0.3s ease',
-            transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
-            fontSize: isHovered ? '36px' : '34px'
-          }}>
-            تسوق الأن
-          </span>
-        </button>
-      </Link>
+      <button
+        style={buttonStyle(isHovered)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={scrollToThreeCards}
+      >
+        <span style={{
+          display: 'inline-block',
+          transition: 'transform 0.3s ease, font-size 0.3s ease',
+          transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
+          fontSize: isHovered ? '36px' : '34px'
+        }}>
+          تسوق الأن
+        </span>
+      </button>
       <div style={{
         position: 'absolute',
         top: '53px',
@@ -779,15 +783,18 @@ function Index() {
       </div>
 
       {/* New Images Section */}
-      <div style={{
-        position: 'absolute',
-        top: '2790px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '32px'
-      }}>
+      <div
+        ref={threeCardsRef}
+        style={{
+          position: 'absolute',
+          top: '2790px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          flexDirection: 'row',
+          gap: '32px'
+        }}
+      >
         <Link to="/women" style={{ textDecoration: 'none' }}>
           <div
             style={{
